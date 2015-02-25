@@ -13,12 +13,12 @@ Project Members:
 
 ## Project proposal
 ### Technologies:
-Forms for taking customer information.
-CSS for a global look-and-feel
-PHP for dynamic product listings
-MySql for storing customer information and product information
-AJAX for making single page call’s back to the application
-javascript for reacting to user events
+* Forms for taking customer information.
+* CSS for a global look-and-feel
+* PHP for dynamic product listings
+* MySql for storing customer information and product information
+* AJAX for making single page call’s back to the application
+* JavaScript for reacting to user events
 
 ### Use Cases:
 
