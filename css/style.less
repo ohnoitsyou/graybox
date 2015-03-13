@@ -1,0 +1,91 @@
+.header {
+  clear: both;
+  .navbar {
+    clear: both;
+    border: 1px solid black;
+    padding: 5px;
+    .quick_links {
+      display: inline;
+      span {
+        margin-right: 10px;
+        padding-right: 5px;
+        //border-right: 1px solid black;
+        &::after {
+          content: url('../img/arrow-resize-rotate.png');
+          padding-left: 2px;
+          vertical-align: -1px;
+        }
+        &:last-of-type {
+          border-right: 0px;
+        } 
+      }
+      
+    }
+    .logo {
+      margin-right: 10px;
+    }
+  }
+  .statusbar {
+    border: 1px solid black;
+    border-top: 0px;
+    padding: 5px;
+    .locationbox {
+      display: inline;
+      span::after {
+        content: url('../img/arrow-resize-rotate.png');
+        padding-left: 2px;
+        vertical-align: -1px;
+      }
+    }
+    .statusboxes {
+      float:right;
+      .userbox {
+        display: inline;
+        margin-right: 10px;
+      }
+      .cartbox {
+        display: inline;
+        img {
+          vertical-align: text-bottom; 
+        }
+      }
+    }
+  }
+}
+.content {
+  width: 95%;
+  margin: auto;  
+  margin-bottom: 100px;
+  .title {
+    border-bottom: 1px solid black;
+  }
+  .checkout_page {
+    width: 75%;
+    margin: auto;
+    margin-top: 15px;
+    .movie_cover {
+      float: left;
+      margin-right: 10px;
+      img {
+        height: 235px;
+        width: 166px
+      }
+    }
+    .checkout_form {
+    }
+  }
+}
+.footer {
+  clear: both;
+  position: fixed; 
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 25px;
+  background-color: gray;
+  text-align: center;
+  padding-top: 5px;
+  span {
+    color: white;
+  }
+}
