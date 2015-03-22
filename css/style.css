@@ -3,98 +3,60 @@
 }
 .header .navbar {
   clear: both;
-  border: 2px solid black;
-  padding: 0px;
+  border: 1px solid black;
+  padding: 5px;
 }
-
-.header .navbar span{
-  border-bottom: none;
-  border-top: none;
-  border-right: none;
-  padding: 0px;
-}
-
 .header .navbar .quick_links {
   display: inline;
 }
-
 .header .navbar .quick_links span {
   margin-right: 10px;
+  padding-right: 5px;
 }
 .header .navbar .quick_links span::after {
-  content: url('../img/arrow-resize-rotate2.png');
-  padding:0px 20px;
-  vertical-align: -5px;
+  content: url('../img/arrow-resize-rotate.png');
+  padding-left: 2px;
+  vertical-align: -1px;
 }
 .header .navbar .quick_links span:last-of-type {
   border-right: 0px;
 }
 .header .navbar .logo {
   margin-right: 10px;
-  padding-left: 15px;
-  padding-right: 100px;
 }
 .header .statusbar {
-  border: 2px solid black;
+  border: 1px solid black;
   border-top: 0px;
   padding: 5px;
-  padding-left: 0px;
-  width: 99.3%;
 }
-
-.header .statusbar2 {
-  border: 2px solid black;
-  border-top: 0px;
-  padding: 5px;
-  padding-left: 0px;
-  width: 99.3%;
-  text-align:right;
-}
-
 .header .statusbar .locationbox {
   display: inline;
-  margin-left: 15px;
 }
 .header .statusbar .locationbox span::after {
   content: url('../img/arrow-resize-rotate.png');
-  padding-left: 0px;
+  padding-left: 2px;
   vertical-align: -1px;
 }
 .header .statusbar .statusboxes {
-  display: inline-block;
   float: right;
 }
-
-.header .statusbar .statusboxes .userbox,
-.header .statusbar2 .statusboxes .userbox{
+.header .statusbar .statusboxes .userbox {
   display: inline;
-  margin-right: 20px;
+  margin-right: 10px;
 }
-.header .statusbar .statusboxes .cartbox,
-.header .statusbar2 .statusboxes .cartbox  {
+.header .statusbar .statusboxes .cartbox {
   display: inline;
 }
 .header .statusbar .statusboxes .cartbox img {
   vertical-align: text-bottom;
 }
-
-.header .statusbar .statusboxes .userbox span::after,
-.header .statusbar2 .statusboxes .userbox span::after{
-  content: url('../img/arrow-resize-rotate.png');
-  padding-left: 0px;
-  vertical-align: -1px;
-}
-
 .content {
-  width: 100%;
+  width: 95%;
   margin: auto;
   margin-bottom: 100px;
-  height:auto;
 }
 .content .title {
-  border-bottom: 2px solid black;
-  width: 95%;
-  margin: 0px 30px;
+  border-bottom: 1px solid black;
 }
 .content .checkout_page {
   width: 75%;
@@ -109,7 +71,6 @@
   height: 235px;
   width: 166px;
 }
-<<<<<<< HEAD
 .content .return_page {
   width: 75%;
   margin: auto;
@@ -144,111 +105,94 @@
 .content .return_page #t01 tr:nth-child(odd) {
   background-color: #eee;
 }
-=======
-
-form {
-	width:400px;
-	margin:0px auto;
-	padding:10px;
-	background-color:#EBEBEB;
-	border-radius:5px;
-	border: 1px solid black;
+.content .preferences_page table {
+  margin: 0 auto;
+  width: 70%;
+  border: 2px solid black;
+  border-bottom: none;
+  border-top: none;
+  background: #F3F3F3;
 }
-
-form h1{
-	margin-top:0px;
+.content .preferences_page table td {
+  text-align: center;
 }
-
-input[type="text"] {
-	width:100%;
-	height:30px;
-	border: 1px solid black;
-	border-radius:2px;
+.content .preferences_page td {
+  text-align: center;
 }
-
-#forgot {
-	color:#489DE9;
-	font-size:18px;
-	font-weight:bold;
-	text-align:right;
+.content .preferences_page tr {
+  margin-left: 10px;
+  width: 95%;
+  float: right;
 }
-
-#send {
-	margin:10px 50px;
-	width:70%;
-	border: 1px solid black;
-	background-color:#FFF;
-	padding:10px;
-	font-size:18px;
-	font-weight:bold;
-	height:auto;
-	border-radius:4px;
+.content .preferences_page tr:nth-child(odd) {
+  background-color: #F3F3F3;
 }
-
-#remember {
-	width: 12px;
+.content .preferences_page tr:nth-child(even) {
+  background-color: #E8E8E8;
 }
-
-label
-{
-	padding:10px 0px 0px;
-	display: block;
-	width: 100%;
-	float: left;
+.content .preferences_page th,
+.content .preferences_page td {
+  padding: 10px;
+  min-width: 150px;
 }
-
-table {
-	margin:0 auto;
-	width:70%;
-	border: 2px solid black;
-	border-bottom:none;
-	border-top:none;
-	background:#F3F3F3;
+.content .preferences_page .row {
+  font-weight: bolder;
 }
-
-td {
-	text-align:center;
+.content .preferences_page .name_page {
+  padding-top: 50px;
+  height: 500px;
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
-
-input[type="radio"] {
-	width:20px;
-	height:20px;
+.content .preferences_page input[type="radio"] {
+  width: 20px;
+  height: 20px;
 }
-
-tr {
-	margin-left:10px;
-	width:95%;
-	float:right;
+.content .login_page form {
+  width: 400px;
+  margin: 0px auto;
+  padding: 10px;
+  background-color: #EBEBEB;
+  border-radius: 5px;
+  border: 1px solid black;
 }
-
-th,td {
-	padding:10px;
-	min-width:150px;
+.content .login_page form h1 {
+  margin-top: 10px;
 }
-
-.row {
-	font-weight:bolder;
+.content .login_page form input[type="text"] {
+  width: 100%;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 2px;
 }
-
-/*  Define the background color for all the ODD background rows  */
-tr:nth-child(odd){ 
-	background: #F3F3F3;
+.content .login_page form #forgot {
+  color: #489DE9;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
 }
-/*  Define the background color for all the EVEN background rows  */
-tr:nth-child(even){
-	background: #E8EAEB;
+.content .login_page form #send {
+  margin: 10px 50px;
+  width: 70px;
+  border: 1px solid black;
+  background-color: #FFFFFF;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  height: auto;
+  border-radius: 4px;
 }
-
-.name_page {
-	padding-top:50px;
-	height:500px;
-	background-image:url("../img/bg.jpg");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-position: center; 
+.content .login_page form #remember {
+  width: 12px;
 }
-
->>>>>>> origin/Christian
+.content .login_page form label {
+  padding: 10px 0px 0px;
+  display: block;
+  width: 100%;
+  float: left;
+}
 .footer {
   clear: both;
   position: fixed;
