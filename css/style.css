@@ -71,6 +71,9 @@
   height: 235px;
   width: 166px;
 }
+.content .checkout_page #card_information td:first-child {
+  text-align: right;
+}
 .content .return_page {
   width: 75%;
   margin: auto;
