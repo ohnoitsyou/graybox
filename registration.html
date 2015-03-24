@@ -35,22 +35,24 @@
   <div class="content">
     <div class="title"><h1>Registration<h1></div>
     <div class="registration_page"> 
-<form name="registrationForm" action="registration.php" method="post">
+<form name="registrationForm" action="registration.php" method="post" id="registrationForm">
  <h3>User Information</h3>
  <br/>
     <table style="text-align: left"  >
       <tr> 
-        <td>First Name: <input type="text" name="fname" size="25"/> </td>
+        <td>First Name:</td><td><input type="text" name="fname" size="25" maxlength="24"/> </td>
       </tr> 
       <tr> 
-        <td>Last Name: <input type="text" name="lname" size="25"/> </td>
+        <td>Last Name:</td><td> <input type="text" name="lname" size="25" maxlength="24"/> </td>
       </tr> 
       <tr> 
-        <td>Email: <input type="text" name="email" size="30"/> </td>
+        <td>Email: </td><td><input type="text" name="email" size="25" maxlength="35" /> </td>
       </tr>
       <tr> 
-        <td>Password: <input type="password" name="pword" size="20"/> 
-            Confirm Password: <input type="password" name="pwordcheck" size="20"/> </td>
+        <td>Password: </td><td><input type="password" name="pword" size="15" maxlength="15"/> </td>
+      </tr>
+      <tr> 
+        <td>Confirm Password:</td><td><input type="password" name="pwordcheck" size="15" maxlength="15"/> </td>
       </tr> 
       </table>
 <br/>   
@@ -58,16 +60,16 @@
 <h3>Delivery Information</h3>
 <br/> 
       <table>
-      <tr><td>Address:</td></tr>
       <tr>
-        <td><textarea name="address" id="address" rows="10" cols="50"> </textarea> </td> 
+        <td>Street:</td><td><input type="text" name="address" size="50" maxlength="50" /> </textarea> </td> 
       </tr>
       <tr>
-         <td>Apt/ Suite #: <input type="text" name="suite" size="10"/> </td>
+         <td>Apt/ Suite #:</td><td><input type="text" name="suite" size="4" maxlength="10"/> </td>
       </tr> 
       <tr> 
-        <td>City: <input type="text" name="tags" size="20"/> 
-          State:<select name= "state">
+        <td>City: </td><td><input type="text" name="tags" size="20"/></td>
+      <tr>
+         <td>State:</td><td><select name= "state">
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
             <option value="AZ">Arizona</option>
@@ -123,7 +125,7 @@
          </td>
       </tr> 
       <tr> 
-        <td>Zip/ Postal Code: <input type="text" name="zip" size="5"/> </td>
+        <td>Zip/ Postal Code:</td><td><input type="text" name="zip" size="5" maxlength="5"/> </td>
       </tr> 
     </table>
     
@@ -132,7 +134,7 @@
 <h3>Payment Information</h3>  
     <table>   
       <tr>
-        <td>Credit Card Type:<select name= "card_type">
+        <td>Credit Card Type:</td><td><select name= "card_type">
             <option value="visa">Visa</option>
             <option value="mastercard">MasterCard</option>
             <option value="discover">Discover</option>
@@ -141,17 +143,19 @@
         </td>    
       </tr>
       <tr> 
-        <td>Card # [16 digits, no spaces]: <input type="text" name="card_NUM" size="16"/> 
-        Expiration [MM/YY]: <input type="text" name="card_EXP" size="5"/> </td>
+        <td>Card #:</td><td><input type="text" name="card_NUM" size="16" maxlength="16" placeholder="16 digits, no spaces"/></td>
       </tr> 
       <tr> 
-        <td>Name [as it appears on card]: <input type="text" name="card_name" size="30"/> </td>
+        <td>Expiration:</td><td><input type="text" name="card_EXP" size="5" maxlength="5" placeholder="MM/YY"/> </td>
       </tr> 
       <tr> 
-        <td>CCV[usualy on back of card]: <input type="text" name="card_ccv" size="3"/> </td>
+        <td>Name:</td><td><input type="text" name="card_name" size="30" maxlength="30" placeholder="as it appears on card"/> </td>
+      </tr> 
+      <tr> 
+        <td>CCV:</td><td><input type="text" name="card_ccv" size="4" maxlength="4"/> </td>
       </tr> 
       <tr>
-        <td>Billing Zip: <input type="text" name="card_zip" size="5"/> </td>
+        <td>Billing Zip:</td><td><input type="text" name="card_zip" size="5" maxlength="5"/> </td>
       </tr>
 
       <tr>

@@ -198,6 +198,9 @@
   width: 100%;
   float: left;
 }
+.content .registration_page #registrationForm td:first-child {
+  text-align: right;
+}
 .footer {
   clear: both;
   position: fixed;
