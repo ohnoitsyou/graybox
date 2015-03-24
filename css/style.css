@@ -201,6 +201,10 @@
 .content .registration_page #registrationForm td:first-child {
   text-align: right;
 }
+.content .new_releases_page {
+  font-size: 15pt;
+  color: red;
+}
 .footer {
   clear: both;
   position: fixed;
