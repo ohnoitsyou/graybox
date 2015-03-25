@@ -5,6 +5,8 @@
   clear: both;
   border: 1px solid black;
   padding: 5px;
+  background-color: gray;
+  color: white;
 }
 .header .navbar .quick_links {
   display: inline;
@@ -12,6 +14,9 @@
 .header .navbar .quick_links span {
   margin-right: 10px;
   padding-right: 5px;
+}
+.header .navbar .quick_links span:hover {
+  color: black;
 }
 .header .navbar .quick_links span::after {
   content: url('../img/arrow-resize-rotate.png');
@@ -143,11 +148,17 @@
 }
 .content .preferences_page .name_page {
   padding-top: 50px;
-  height: 500px;
   background-image: url("../img/bg.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  background-clip: content-box;
+  position: fixed;
+  top: 50px;
+  bottom: 1px;
+  left: 1px;
+  right: 1px;
+  z-index: -1;
 }
 .content .preferences_page input[type="radio"] {
   width: 20px;
