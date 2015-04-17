@@ -15,10 +15,9 @@
 body {
   background-image: url('../img/14.jpg');
   background-repeat: no-repeat;
-  background-attachment: local;
+  background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  position: fixed;
   top: 0px;
   bottom: 0px;
   left: 0px;
