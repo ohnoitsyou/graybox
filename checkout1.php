@@ -1,3 +1,7 @@
+<?php
+  $username = "cnieva";
+  $num_items_in_cart = 1;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,11 +27,11 @@
       </div>
       <div class="statusboxes">
         <div class="userbox">
-          <span class="username">Welcome cnieva</span>
+          <span class="username">Welcome <?php echo $username; ?></span>
         </div>
         <div class="cartbox">
           <img src="img/shopping_cart.png" height="16px" width="16px"/> My Cart&nbsp;
-          <span class="items_in_cart">1</span>
+          <span class="items_in_cart"><?php echo $num_items_in_cart; ?></span>
         </div>
       </div>
     </div>
