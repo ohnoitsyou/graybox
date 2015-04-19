@@ -37,10 +37,6 @@
     <div class="registration_page"> 
     <?php
     include('api/common.php');
-    //Database Connection
-    dbLogin();
-    //Select Database
-    dbSelect();
     //User Information 
     $fname = htmlspecialchars($_POST['fname']);
         $fname = mysql_real_escape_string($fname);
@@ -70,6 +66,10 @@
 echo "Thank you $fname $lname for registering with Greybox, your convienient movie rental kiosk. <br />";
 echo "We appreciate you buisiness.<br/> Please review your submitted user information below.";
 
+//Database Connection
+dbLogin();
+//Select Database
+dbSelect();
 
 //Insert Statement: Contructed Query 1: User Info & Delivery Info
     $constructed_query1 = "INSERT INTO users (fname, lname, email, pword, address, suite, city, state, zip, registrationDate) 
@@ -80,14 +80,14 @@ echo "We appreciate you buisiness.<br/> Please review your submitted user inform
     ;//to end constructed query
 //Insert Statement: Contructed Query 2: Payment Info
     $constructed_query2 = "INSERT INTO payment_info (card_owner, card_type, card_NUM, card_EXP, card_name, card_ccv, card_zip) 
-        VALUES ('I DUNNO WHAT TO PUT HERE','$card_type', '$card_NUM', '$card_EXP', '$card_name', '$card_ccv', '$card_zip')
+        VALUES (mysql_insert_id(),'$card_type', '$card_NUM', '$card_EXP', '$card_name', '$card_ccv', '$card_zip')
         );"//to end insert statement
     ;//to end constructed query
 
 executeQuery($constructed_query1);
 executeQuery($constructed_query2);
 
-	$constructed_query_out ="SELECT fname, lname, email, address, suite, city, state, zip FROM users;";
+	$constructed_query_out ="SELECT fname, lname, email, address, suite, city, state, zip FROM users";
 	$result=mysql_query($constructed_query_out);
 
 /* I GUESS I DONT NEED THIS? i see you included results in the executeQuery function
