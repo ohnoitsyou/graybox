@@ -1,5 +1,8 @@
 <?php
-  $username = "cnieva";
+  session_start();
+  include('api/common.php');
+  $_SESSION['username'] = 'cnieva';
+  $username = $_SESSION['username'];
   $num_items_in_cart = 1;
 ?>
 <!DOCTYPE html>
@@ -12,6 +15,20 @@
   <link rel="stylesheet/less" type="tet/css" href="css/style.less">
   <script src="js/less.js" type="text/javascript"></script>
   -->
+  <script type="text/javascript">
+    function filterZips() {
+      alert('filtering');
+      var zipcode = document.getElementById('zipcode');
+      var XHR = new XMLHttpRequest();
+      XHR.onLoad = zipResp;
+      XHR.open("GET","api/narrowLocations.php");
+      XHR.send();
+    }
+    function zipResp(data) {
+      console.log('RT:',this.responseText); 
+      console.log('data:',data); 
+    }
+  </script>
 </head>
 <body>
   <div class="header">
@@ -45,6 +62,8 @@
       <div class="checkout_form">
         <form action="checkout2.html"> 
           <h3>Pickup Location</h3>
+          <input type="text" value="#####" id="zipcode" size="5"><input type="button" value="filter locations" onclick="filterZips()">
+          <br />
           <select name="pickup">
             <option value="loc_1">Location 1</option>
             <option value="loc_2">Location 2</option>
@@ -68,3 +87,4 @@
   </div>
 </body>
 </html>
+<!-- David Young -->
