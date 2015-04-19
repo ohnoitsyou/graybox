@@ -17,6 +17,7 @@
   -->
   <script type="text/javascript">
     function filterZips() {
+      return false;
       alert('filtering');
       var zipcode = document.getElementById('zipcode');
       var XHR = new XMLHttpRequest();
