@@ -37,11 +37,15 @@
     <div class="registration_page"> 
     <?php
     include('api/common.php');
+    //Database Connection
+    dbLogin();
+    //Select Database
+    dbSelect();
     //User Information 
     $fname = htmlspecialchars($_POST['fname']);
-        $fname = mysql_real_escape_string($fname);
+    $fname = mysql_real_escape_string($fname);
     $lname = htmlspecialchars($_POST['lname']);
-        $lname = mysql_real_escape_string($lname);
+    $lname = mysql_real_escape_string($lname);
     $email = mysql_real_escape_string($_POST["email"]);
     $pword = mysql_real_escape_string($_POST["pword"]);
     $pwordcheck = $_POST["pwordcheck"]; //will use javascript to handle password check
@@ -61,62 +65,26 @@
     $card_ccv = mysql_real_escape_string($_POST["card_ccv"]);
     $card_zip = mysql_real_escape_string($_POST["card_zip"]);
 
-    
+    echo "Thank you $fname $lname for registering with Greybox, your convienient movie rental kiosk. <br />";
+    echo "We appreciate you buisiness.";
 
-echo "Thank you $fname $lname for registering with Greybox, your convienient movie rental kiosk. <br />";
-echo "We appreciate you buisiness.<br/> Please review your submitted user information below.";
-
-//Database Connection
-dbLogin();
-//Select Database
-dbSelect();
-
-//Insert Statement: Contructed Query 1: User Info & Delivery Info
-    $constructed_query1 = "INSERT INTO users (fname, lname, email, pword, address, suite, city, state, zip, registrationDate) 
+    //Insert Statement: Contructed Query 1: User Info & Delivery Info
+    $constructed_query1 = "INSERT INTO users (fname, lname, email, pword, address, suite, city, state, zip, registration) 
         VALUES ( 
-            '$fname', '$lname', '$email', '$email', MD5('$pword'), 
+            '$fname', '$lname', '$email', MD5('$pword'), 
             '$address', '$suite', '$city', '$state', '$zip', CURDATE() 
         );"//to end insert statement
     ;//to end constructed query
-//Insert Statement: Contructed Query 2: Payment Info
+    //Insert Statement: Contructed Query 2: Payment Info
+    $last_id = mysql_insert_id();
     $constructed_query2 = "INSERT INTO payment_info (card_owner, card_type, card_NUM, card_EXP, card_name, card_ccv, card_zip) 
-        VALUES (mysql_insert_id(),'$card_type', '$card_NUM', '$card_EXP', '$card_name', '$card_ccv', '$card_zip')
-        );"//to end insert statement
+        VALUES ($last_id,'$card_type', '$card_NUM', '$card_EXP', '$card_name', '$card_ccv', '$card_zip');"//to end insert statement
     ;//to end constructed query
 
-executeQuery($constructed_query1);
-executeQuery($constructed_query2);
+    executeQuery($constructed_query1);
+    executeQuery($constructed_query2);
 
-	$constructed_query_out ="SELECT fname, lname, email, address, suite, city, state, zip FROM users";
-	$result=mysql_query($constructed_query_out);
-
-/* I GUESS I DONT NEED THIS? i see you included results in the executeQuery function
-
-if(! $result){
-    print("<br /> Error - query could not be executed");
-    $error = mysql_error();
-    print "<p>$error</p>";
-    exit;
-  }
-
-$num_rows = mysql_num_rows($result);
-
-  for($row_num = 1; $row_num <= $num_rows; $row_num++){
-      $row = mysql_fetch_array($result);
-      print("<h2> $row[fname]  $row[lname]</h2>
-              <p> Email: $row[email] <br/><br/><br/>
-                  Address: $row[address] <br/> 
-                  Suite: $row[suite] <br/> 
-                  City: $row[city] <br/> 
-                  State: $row[state] <br/> 
-                  Zip: $row[zip] <br/><br/><br/>
-              </p>");
-}
-  
-mysql_close($db);
-*/
-
-echo "You are now a registered user. Rent away!";
+    echo "You are now a registered user. Rent away!";
 ?>
 
 <a href="new_releases.html">Click here to view new releases.</a>
