@@ -10,13 +10,11 @@ function dbLogin() {
   $con = mysql_connect($dbhostname , $dbusername, $dbpassword);
   return $con;
 }
-
 function dbSelect() {
   global $dbdatabase, $db;
   $db = mysql_select_db($dbdatabase);
   return $db;
 }
-
 function executeQuery($query) {
   global $con;
   global $db;
@@ -31,7 +29,6 @@ function executeQuery($query) {
   }
   return $resultsArray;
 }
-
 function getLocations($zipcode) {
   $query = "";
   if($zipcode = "00000" || $zipcode = "") {
@@ -42,7 +39,6 @@ function getLocations($zipcode) {
   }
   return executeQuery($query);
 }
-
 function getUserInfo($userid) {
   $query = sprintf("select * from users where userID = '%s';",
             mysql_real_escape_string($userid));

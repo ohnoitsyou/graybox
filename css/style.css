@@ -1,17 +1,3 @@
-/*
- *
- * There is a known bug with scrolling, we added a background image and stuff broke.
- * At this point we have no idea why, we are submitting as is until a solution can be found
- *   A solution WILL be found.
- * At this point it's the 11th hour with 10 minutes to spare and I'm (David) willing to accept this for now
- *
- * I'm going to fork this code on github (https://github.com/ohnoitsyou/graybox) and find out what is wrong
- *
- * For now I sleep. I have CCDC competition in the morning.
- *
- * -- David Young (3/25/15 23:51)
- */
-
 body {
   background-image: url('../img/14.jpg');
   background-repeat: no-repeat;
