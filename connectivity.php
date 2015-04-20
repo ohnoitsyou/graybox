@@ -2,6 +2,7 @@
 session_start();  
 include('api/common.php');
 ?>
+
 <!DOCTYPE html PUBLIC "-//w3c//DTD XHTML 1.1//EN"
   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
@@ -14,7 +15,12 @@ include('api/common.php');
 <body>
 
 <?php
-    
+//Connect to database server
+dbLogin();
+
+//Select database
+dbSelect();
+
 $username = $_POST['username'];
 $password = $_POST['password'];
 
@@ -23,26 +29,16 @@ $username = stripslashes($username);
 $password = stripslashes($password);
 $username = mysql_real_escape_string($username);
 $password = mysql_real_escape_string($password);
-$password_hash = md5($password)
+$password_hash = md5($password);
 
-//Connect to database server
-dbLogin();
-
-//Select database
-dbSelect();
 
 //Execute query
-$sql = executeQuery("SELECT * FROM users WHERE username='$username' and password='$password'";
-
-$results=mysql_query($sql));
+$results = executeQuery("SELECT * FROM users WHERE username='$username' and password='$password'");
 
 //Mysql_num_row is counting table row
 $count=mysql_num_rows($result);
-
-//If result matched $username and $password, table row must be 1 row
-if($count==1){
-
-//Register $username, $password and redirect to file "login_success.php"
+print(var_dump($count));
+/*(
     session_register("username");
     session_register("password"); 
     header("location:login_success.php");
@@ -51,6 +47,7 @@ if($count==1){
     else {
         echo "Wrong username or password";
     }
+*/
 ?>
     
 </body>
