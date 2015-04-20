@@ -229,6 +229,7 @@ body {
   text-align: right;
 }
 .content .new_releases_page {
+  padding-top: 10px;
   font-size: 15pt;
   color: red;
 }

@@ -3,7 +3,7 @@ session_start();
 include('api/common.php');
 dbLogin();
 dbSelect();
-$movie_query = "SELECT DISTINCT iName from inventory where releaseDate between DATE_SUB(Now(), INTERVAL 30 DAY) AND NOW() ORDER BY inventoryID DESC LIMIT 5;";
+$movie_query = "SELECT DISTINCT inventoryID from inventory where releaseDate between DATE_SUB(Now(), INTERVAL 30 DAY) AND NOW() ORDER BY inventoryID DESC LIMIT 5;";
 $results = executeQuery($movie_query);
 ?>
 <!DOCTYPE html>
@@ -45,9 +45,9 @@ $results = executeQuery($movie_query);
     <div class="new_releases_page">
     <?php 
     if(count($results) > 0 ){
-      foreach($movie as $results) {
+      foreach($results as $movie) {
     ?>
-        <img src="img/the_lego_movie.jpg" alt="Fury movie" height="500px" width="300px">
+        <img src="img/<?php echo $movie['inventoryID']; ?>.jpg" alt="<?php echo $movie['iName']; ?>" height="500px" width="300px">
     <?php
       }
     } else {
