@@ -193,6 +193,13 @@ body {
   border: 1px solid black;
   border-radius: 2px;
 }
+.content .login_page form input[type="password"] {
+  width: 100%;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 2px;
+
+}
 .content .login_page form #forgot {
   color: #489DE9;
   font-size: 18px;
