@@ -20,7 +20,7 @@ $documentaries = $_POST["documentaries"];
 $dramas = $_POST["dramas"];
 $foreign = $_POST["foreign"];
 $horror = $_POST["horror"];
-$sci-fi = $_POST["sci_fi"];
+$sci_fi = $_POST["sci_fi"];
 $tv = $_POST["tv"];
 $thrillers = $_POST["thrillers"];
 
