@@ -72,7 +72,7 @@
     //Insert Statement: Contructed Query 1: User Info & Delivery Info
     $constructed_query1 = "INSERT INTO users (fname, lname, email, username, pword, address, suite, city, state, zip, registration) 
         VALUES ( 
-            '$fname', '$lname', '$email', '$username' MD5('$pword'), 
+            '$fname', '$lname', '$email', '$username', MD5('$pword'), 
             '$address', '$suite', '$city', '$state', '$zip', CURDATE() 
         );"//to end insert statement
     ;//to end constructed query
