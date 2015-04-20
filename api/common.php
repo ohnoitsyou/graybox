@@ -28,7 +28,6 @@ function executeQuery($query) {
   if(in_array($queryType, $queryTypes)) {
     return $results;
   } else {
-    print(var_dump($query));
     if(mysql_num_rows($results) > 0) {
       for($i = 0; $i < mysql_num_rows($results); $i++) {
         $resultsArray[] =  mysql_fetch_assoc($results);
