@@ -13,20 +13,6 @@ $price = 'price';
 $sql = mysql_query("SELECT DISTINCT * FROM inventory;");
 ?>
 
-<table id='display' border="1" style="width:100%"> 
-    <?php 
-        while($rows = mysql_fetch_array($sql)) { 
-    ?>
-       <tr>
-           <td><?php echo $rows[$iName]; ?></td>
-           <td><?php echo $rows[$iDescription]; ?></td>
-           <td><?php echo $rows[$releaseDate]; ?></td>
-           <td><?php echo $rows[$price]; ?></td>
-    </tr>
-     <?php   
-        } 
-     ?> 
- </table>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,7 +51,20 @@ $sql = mysql_query("SELECT DISTINCT * FROM inventory;");
   <div class="content">
     <div class="title"><h1>New Releases<h1></div>
     <div class="new_releases_page">
- 
+      <table id='display' border="1" style="width:100%"> 
+    <?php 
+        while($rows = mysql_fetch_array($sql)) { 
+    ?>
+       <tr>
+           <td><?php echo $rows[$iName]; ?></td>
+           <td><?php echo $rows[$iDescription]; ?></td>
+           <td><?php echo $rows[$releaseDate]; ?></td>
+           <td><?php echo $rows[$price]; ?></td>
+      </tr>
+     <?php   
+        } 
+     ?> 
+     </table>
     <p>
       <a href="checkout1.html">Ready to checkout?</a>
     </p>
