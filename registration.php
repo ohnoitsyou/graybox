@@ -49,7 +49,7 @@
     $email = mysql_real_escape_string($_POST["email"]);
     $username = mysql_real_escape_string($_POST["username"]);
     $pword = mysql_real_escape_string($_POST["pword"]);
-    $pwordcheck = $_POST["pwordcheck"]; //will use javascript to handle password check
+    $pwordcheck = $_POST["pwordcheck"]; //will use javascript along with ajax to handle password check
 
     //Delivery Information
     $address = mysql_real_escape_string($_POST["address"]);
@@ -66,8 +66,19 @@
     $card_ccv = mysql_real_escape_string($_POST["card_ccv"]);
     $card_zip = mysql_real_escape_string($_POST["card_zip"]);
 
+    //Create an array $userinfo[] --containing all usernames
+    $sql = mysql_query("select username from users");
+    $userinfo = array();
+    while ($row_user = mysql_fetch_assoc($sql))
+        {$userinfo[] = $row_user;}
+
+
     if ($pword!=$pwordcheck){
         $response="passwords dont match";
+        echo $response;
+    }
+    else if (in_array($username,$userinfo)){
+        $response="username taken";
         echo $response;
     }
     else{
@@ -93,14 +104,10 @@
         echo "You are now a registered user. Rent away!";
     }
     ?>
-
-    <a href="new_releases.html">Click here to view new releases.</a>
-
-
-
-        
-        
+    <a href="new_releases.html">Click here to view new releases.</a>  
     </div>
+        
+        
   </div>
   <div class="footer">
     <span>&copy; 2015 Team Zero Two Point Oh</span>

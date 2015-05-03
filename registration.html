@@ -54,13 +54,13 @@
         <td>Email: </td><td><input type="text" name="email" id="email" size="25" maxlength="35" /> </td>
       </tr>
       <tr> 
-        <td>Username: </td><td><input type="text" name="username" id="username" size="15" maxlength="24" /> </td>
+        <td>Username: </td><td><input type="text" name="username" id="username" size="15" maxlength="24" onblur="validateUsername()" /><span id="userbox"></span> </td>
       </tr>
       <tr> 
         <td>Password: </td><td><input type="password" name="pword" id="pword" size="15" maxlength="15"/> </td>
       </tr>
       <tr> 
-        <td>Confirm Password:</td><td><input type="password" name="pwordcheck" id="pwordcheck" size="15" maxlength="15" onblur="validatePassword()"/><span id="passbox"></span> </td>
+        <td>Confirm Password:</td><td><input type="password" name="pwordcheck" id="pwordcheck" size="15" maxlength="15" onblur="validatePassword()"/><span id="passbox"></span></td>
       </tr> 
       </table>
 <br/>   
