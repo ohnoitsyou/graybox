@@ -1,11 +1,19 @@
 <?php
 session_start();
 include('api/common.php');
+
 dbLogin();
 dbSelect();
-$movie_query = "SELECT DISTINCT inventoryID from inventory where releaseDate between DATE_SUB(Now(), INTERVAL 30 DAY) AND NOW() ORDER BY inventoryID DESC LIMIT 5;";
-$results = executeQuery($movie_query);
+
+$iName = 'iName';
+$iDescription = 'iDescription';
+$releaseDate = 'releaseDate';
+$price = 'price';
+
+$sql = mysql_query("SELECT DISTINCT * FROM inventory;");
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,19 +51,20 @@ $results = executeQuery($movie_query);
   <div class="content">
     <div class="title"><h1>New Releases<h1></div>
     <div class="new_releases_page">
+      <table id='display' border="1" style="width:100%"> 
     <?php 
-    if(count($results) > 0 ){
-      foreach($results as $movie) {
+        while($rows = mysql_fetch_array($sql)) { 
     ?>
-        <img src="img/<?php echo $movie['inventoryID']; ?>.jpg" alt="<?php echo $movie['iName']; ?>" height="500px" width="300px">
-    <?php
-      }
-    } else {
-    ?>
-      <p>No new movies at this time. Check back later</p>
-    <?php
-    }
-    ?> 
+       <tr>
+           <td><?php echo $rows[$iName]; ?></td>
+           <td><?php echo $rows[$iDescription]; ?></td>
+           <td><?php echo $rows[$releaseDate]; ?></td>
+           <td><?php echo $rows[$price]; ?></td>
+      </tr>
+     <?php   
+        } 
+     ?> 
+     </table>
     <p>
       <a href="checkout1.html">Ready to checkout?</a>
     </p>
