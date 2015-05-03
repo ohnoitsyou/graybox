@@ -66,29 +66,39 @@
     $card_ccv = mysql_real_escape_string($_POST["card_ccv"]);
     $card_zip = mysql_real_escape_string($_POST["card_zip"]);
 
-    echo "Thank you $fname $lname for registering with Greybox, your convienient movie rental kiosk. <br />";
-    echo "We appreciate you buisiness.";
+    if ($pword!=$pwordcheck){
+        $response="passwords dont match";
+        echo $response;
+    }
+    else{
+        echo "Thank you $fname $lname for registering with Greybox, your convienient movie rental kiosk. <br />";
+        echo "We appreciate you buisiness.";
 
-    //Insert Statement: Contructed Query 1: User Info & Delivery Info
-    $constructed_query1 = "INSERT INTO users (fname, lname, email, username, pword, address, suite, city, state, zip, registration) 
-        VALUES ( 
-            '$fname', '$lname', '$email', '$username', MD5('$pword'), 
-            '$address', '$suite', '$city', '$state', '$zip', CURDATE() 
-        );"//to end insert statement
-    ;//to end constructed query
-    //Insert Statement: Contructed Query 2: Payment Info
-    $last_id = mysql_insert_id();
-    $constructed_query2 = "INSERT INTO payment_info (card_owner, card_type, card_NUM, card_EXP, card_name, card_ccv, card_zip) 
-        VALUES ($last_id,'$card_type', '$card_NUM', '$card_EXP', '$card_name', '$card_ccv', '$card_zip');"//to end insert statement
-    ;//to end constructed query
+        //Insert Statement: Contructed Query 1: User Info & Delivery Info
+        $constructed_query1 = "INSERT INTO users (fname, lname, email, username, pword, address, suite, city, state, zip, registration) 
+            VALUES ( 
+                '$fname', '$lname', '$email', '$username', MD5('$pword'), 
+                '$address', '$suite', '$city', '$state', '$zip', CURDATE() 
+            );"//to end insert statement
+        ;//to end constructed query
+        //Insert Statement: Contructed Query 2: Payment Info
+        $last_id = mysql_insert_id();
+        $constructed_query2 = "INSERT INTO payment_info (card_owner, card_type, card_NUM, card_EXP, card_name, card_ccv, card_zip) 
+            VALUES ($last_id,'$card_type', '$card_NUM', '$card_EXP', '$card_name', '$card_ccv', '$card_zip');"//to end insert statement
+        ;//to end constructed query
 
-    executeQuery($constructed_query1);
-    executeQuery($constructed_query2);
+        executeQuery($constructed_query1);
+        executeQuery($constructed_query2);
 
-    echo "You are now a registered user. Rent away!";
-?>
+        echo "You are now a registered user. Rent away!";
+    }
+    ?>
 
-<a href="new_releases.html">Click here to view new releases.</a>
+    <a href="new_releases.html">Click here to view new releases.</a>
+
+
+
+        
         
     </div>
   </div>
