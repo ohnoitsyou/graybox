@@ -1,6 +1,6 @@
-function validateUsername(){
+function validateUsername() {
     var usernameValidation =  document.getElementById("username").value;
-	new Ajax.Request( "registration.php", 
+	new Ajax.Request("registration.php",
 	{ 
 		method: "post", 
 		parameters: {username:usernameValidation},
@@ -78,26 +78,18 @@ function chkString() {
     var card_zip =  document.getElementById("card_zip").value;
    
     //RegEx patterns for textbox validation
-        var fnamePattern = /^[a-z ,.'-]+$/i;
-        var lnamePattern = /^[a-z ,.'-]+$/i;
-        var emailPattern = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)\b$/;
-        var usernamePattern = /^(?=.{8,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/;
-
-        var addressPattern = /^[a-z0-9\s,'-]*$/i;
-        var cityPattern = /^[a-z-]+$/i;
+        var fnamePattern = /^[a-z ,.'\-]+$/i;
+        var lnamePattern = /^[a-z ,.'\-]+$/i;
+        var emailPattern = /^[a-z0-9!#$%&'*+\/=?\^_`{|}~\-]+(?:\.[a-z0-9!#$%&'*+\/=?\^_`{|}~\-]+)*@(?:[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)\b$/;
+        var usernamePattern = /^[a-z._0-9]+$/i;
+        var addressPattern = /^[a-z0-9\s,'\-]*$/i;
+        var cityPattern = /^[a-z\-]+$/i;
         var zipPattern = /^[0-9]{5}$/;
-    
-        var card_NUMPattern = /
-                                ^(?:4[0-9]{12}(?:[0-9]{3})?          # Visa
-                                 |  5[1-5][0-9]{14}                  # MasterCard
-                                 |  3[47][0-9]{13}                   # American Express
-                                 |  6(?:011|5[0-9]{2})[0-9]{12}      # Discover
-                              /;
+        var card_NUMPattern = /^[0-9]{16}$/;
         var card_EXPPattern = /^(0[1-9]|1[012])\/\d{2}$/;
         var card_namePattern = /^[a-z ,.'-]+$/i;
         var card_ccvPattern = /^[0-9]+$/;
         var card_zipPattern = /^[0-9]{5}$/;
-        
 
     //Checks VARs against RegEx patterns
     var fnameCheck = fnamePattern.test(fname);
@@ -206,7 +198,6 @@ function chkString() {
         }  
 //return true, else statement    
     else{
-        alert("Thanks for stopping by.\n\nRashid will get in contact with you within the next few days.");
         return true;
         }
 }
