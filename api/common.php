@@ -36,6 +36,13 @@ function executeQuery($query) {
   }
   return $resultsArray;
 }
+
+function loggedInCheck() {
+  if(!$_SESSION['logged_in']) {
+    header('Location: login.html');
+  }
+}
+
 function getLocations($zipcode) {
   $query = "";
   if($zipcode = "00000" || $zipcode = "") {
