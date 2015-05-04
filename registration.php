@@ -33,6 +33,7 @@
     </div>
   </div>
   <div class="content">
+  
     <div class="title"><h1>Thank You<h1></div>
     <div class="registration_page"> 
     <?php
