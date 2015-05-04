@@ -78,9 +78,9 @@ function chkString() {
     var card_zip =  document.getElementById("card_zip").value;
    
     //RegEx patterns for textbox validation
-        var fnamePattern = /^[a-z ,.'\-]+$/i;
-        var lnamePattern = /^[a-z ,.'\-]+$/i;
-        var emailPattern = /^[a-z0-9!#$%&'*+\/=?\^_`{|}~\-]+(?:\.[a-z0-9!#$%&'*+\/=?\^_`{|}~\-]+)*@(?:[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)\b$/;
+        var fnamePattern = /^[a-z \-]+$/i;
+        var lnamePattern = /^[a-z \-]+$/i;
+        var emailPattern = /^[a-z0-9!#$%&'*+\/=?\^_`{|}~\-]+(?:\.[a-z0-9!#$%&'*+\/=?\^_`{|}~\-]+)*@(?:[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)\b$/i;
         var usernamePattern = /^[a-z._0-9]+$/i;
         var addressPattern = /^[a-z0-9\s,'\-]*$/i;
         var cityPattern = /^[a-z\-]+$/i;
@@ -110,7 +110,7 @@ function chkString() {
 //if statements with coorespinding alerts, reselect if patternCheck=false
     //
     // fname , lname , email , username
-    if (pword!=pwordcheck )
+    if (pword_Validation!=pwordcheck_Validation )
         {
         alert("Your passwords do not match.");
         document.getElementById("pword").select();
@@ -118,13 +118,13 @@ function chkString() {
         }  
     else if (!fname || fnameCheck==false )
         {
-        alert("You must provide a valid first name. (Letters Only) ");
+        alert("You must provide a valid first name. (Letters, spaces and hyphens only) ");
         document.getElementById("fname").select();
         return false;     
         }
     else if (!lname || lnameCheck==false )
         {
-        alert("You must provide a valid last name. \n(Letters Only) ");
+        alert("You must provide a valid last name. \n(Letters, spaces and hyphens only) ");
         document.getElementById("lname").select();
         return false;     
         }
