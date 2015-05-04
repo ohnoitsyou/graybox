@@ -8,10 +8,6 @@ include('api/common.php');
   <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <!--
-   <link rel="stylesheet/less" type="tet/css" href="css/style.less">
-  <script src="js/less.js" type="text/javascript"></script>
-  -->
 </head>
 <body>
 	<?php
@@ -23,17 +19,19 @@ include('api/common.php');
 		dbSelect();
 		
 		#construct query
-		$query ='SELECT inventory.inventoryID, inventory.iName, transaction.date FROM inventory, users, transactions WHERE
+		$query ="SELECT transactions.inventoryID, inventory.iName, transaction.date FROM inventory, users, transactions WHERE
 		$username = users.username and
 		users.username = users.userID and
-		transactions.userID = users.userID and
-		transactions.statusReturn ='N';'/*single or double quote around the "N"?*/
+		users.userID = transactions.userID and
+		transactions.statusReturn ='N' and
+		transactions.inventoryID = inventory.inventoryID and
+		inventory.inventoryID = inventory.iName;";
 		
 		executeQuery($query);
 		
-		$inventoryID = $resultsArray[inventoryID]; /*specify tables? inventory table*/
-		$iName = $resultsArray[iName];             /*inventory table */
-		$dateRented = $$resultsArray[date]         /*transactions table /////       reserved word?*/
+		$inventoryID = $resultsArray[0]["inventoryID"]; /*specify tables? inventory table*/
+		$iName = $resultsArray[0]["iName"];             /*inventory table */
+		$dateRented = $$resultsArray[0]["date"];         /*transactions table // reserved word?*/
 		$dateDue = date_add($dateRented, date_interval_create_from_date_string('7 days')); 
 		
 		
