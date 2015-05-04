@@ -8,10 +8,6 @@ include('api/common.php');
   <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <!--
-   <link rel="stylesheet/less" type="text/css" href="css/style.less">
-  <script src="js/less.js" type="text/javascript"></script>
-  -->
 </head>
 <body>
 	<?php
@@ -28,7 +24,7 @@ include('api/common.php');
 		$username = users.username and
 		users.username = users.userID and
 		users.userID = transactions.userID and
-		transactions.statusReturn = 'N'";
+		transactions.statusReturn = 'N';";
 	
 		#write to db
 		$write_result = mysql_query($write);
@@ -65,7 +61,7 @@ include('api/common.php');
   </div>
   <div class="content">
     <div class="title"><h1>Return Movies<h1></div>
-	<h3>Please print this page to include with your movie(s).</h3>
+	<h3>Please print this page to include with your movie.</h3>
 	<div class="return_page">
 	  <table id="t01">
 	    <tr><td>Customer ID:</td><td><?php $username ?></td></tr>
