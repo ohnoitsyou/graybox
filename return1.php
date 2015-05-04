@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('api/common.php');
+loggedInCheck()
 ?>
 <!DOCTYPE html>
 <html lang="en">
