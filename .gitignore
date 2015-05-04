@@ -1,2 +1,4 @@
 js/less.js-master/
 scratchpad.php
+*.sw*
+.DS_store
