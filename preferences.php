@@ -17,20 +17,23 @@ loggedInCheck();
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src=" http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js" type="text/javascript"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js" type="text/javascript"></script>
+  <script src="js/script.js" type="text/javascript"></script>
     <script type="text/javascript"> //Insert values into MySQL database with AJAX
-        $(document).ready(function(){
-            $("#submit").click(function(){
-
+      function sendajax() {
+              alert('running');
                  var action=$$('input:checked[type="radio"][name="action"]').pluck('value');
-                 var children=$('input:checked[type="radio"][name="children"]').pluck('value');
-                 var comedies=$('input:checked[type="radio"][name="comedies"]').pluck('value');
-                 var documentaries=$('input:checked[type="radio"][name="documentaries"]').pluck('value');
-                 var dramas=$('input:checked[type="radio"][name="dramas"]').pluck('value');
-                 var foreign=$('input:checked[type="radio"][name="foreign"]').pluck('value');
-                 var horror=$('input:checked[type="radio"][name="horror"]').pluck('value');
-                 var sci_fi=$('input:checked[type="radio"][name="sci_fi"]').pluck('value');
-                 var tv=$('input:checked[type="radio"][name="tv"]').pluck('value');
-                 var thrillers=$('input:checked[type="radio"][name="thrillers"]').pluck('value');
+              alert(action);
+                 var children=$$('input:checked[type="radio"][name="children"]').pluck('value');
+                 var comedies=$$('input:checked[type="radio"][name="comedies"]').pluck('value');
+                 var documentaries=$$('input:checked[type="radio"][name="documentaries"]').pluck('value');
+                 var dramas=$$('input:checked[type="radio"][name="dramas"]').pluck('value');
+                 var foreign=$$('input:checked[type="radio"][name="foreign"]').pluck('value');
+                 var horror=$$('input:checked[type="radio"][name="horror"]').pluck('value');
+                 var sci_fi=$$('input:checked[type="radio"][name="sci_fi"]').pluck('value');
+                 var tv=$$('input:checked[type="radio"][name="tv"]').pluck('value');
+                 var thrillers=$$('input:checked[type="radio"][name="thrillers"]').pluck('value');
 
                 if($('input[type="radio"]:checked').length == "0"){
                     alert("Select any category");
@@ -71,8 +74,7 @@ loggedInCheck();
                     });
                 }
                 return false;
-            });
-        });
+            };
     </script>
 
 </head>
@@ -112,9 +114,9 @@ loggedInCheck();
 			</tr>
 			<tr>
 				<td class="row">Action &amp; Adventure</td>
-				<td><input type="radio" name="action" /></td>
-				<td><input type="radio" name="action" /></td>
-				<td><input type="radio" name="action" /></td>
+				<td><input type="radio" name="action" value="n"/></td>
+				<td><input type="radio" name="action" value="s"/></td>
+				<td><input type="radio" name="action" value="o"/></td>
 			</tr>
 			<tr>
 				<td class="row">Children &amp; Family</td>
@@ -171,7 +173,7 @@ loggedInCheck();
 				<td><input type="radio" name="thrillers" /></td>
 			</tr>
       <tr>
-        <td><input type="submit" value="submit" id="submit" ></td>
+        <td><input type="submit" value="submit" id="submit" onclick="return sendajax()"></td>
         <td>&nbsp</td>
         <td>&nbsp</td>
         <td>&nbsp</td>
