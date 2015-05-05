@@ -70,7 +70,10 @@ body {
 .content {
   width: 95%;
   margin: auto;
+  margin-top: 10px;
   margin-bottom: 100px;
+  background-color: lightgray; 
+  border: 1px solid black;
 }
 .content .title {
   border-bottom: 1px solid black;
@@ -90,6 +93,19 @@ body {
 }
 .content .checkout_page #card_information td:first-child {
   text-align: right;
+}
+.content .itemDetails_page {
+  width: 75%;
+  margin: auto;
+  margin-top: 15px;
+}
+.content .itemDetails_page .movie_cover {
+  float: left;
+  margin-right: 10px;
+}
+.content .itemDetails_page .movie_cover img {
+  height: 235px;
+  width: 166px;
 }
 .content .return_page {
   width: 75%;
