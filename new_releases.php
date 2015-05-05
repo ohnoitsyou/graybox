@@ -50,7 +50,7 @@ $results = executeQuery($movie_query);
     if(count($results) > 0 ){
       foreach($results as $movie) {
     ?>
-        <img src="img/<?php echo $movie['inventoryID']; ?>.jpg" alt="<?php echo $movie['iName']; ?>" height="500px" width="300px" onmouseover="bigImg(this)" onmouseout="normalImg(this)">
+        <img src="img/<?php echo $movie['inventoryID']; ?>.jpg" alt="<?php echo $movie['iName']; ?>" height="300px" width="250px" onmouseover="this.style.height='500px';this.style.width='300px';" onmouseout="this.style.height='300px';this.style.width='250px';">
     <?php
       }
     } else {
