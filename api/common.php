@@ -62,6 +62,10 @@ function addToCartButton($id) {
   return "<input type=\"button\" value=\"Add To Cart\" onclick=\"addToCart($id)\" />";
 }
 
+function removeFromCartButton($id) {
+  return "<input type=\"button\" value=\"Remove From Cart\" onclick=\"removeFromCart($id)\" />";
+}
+
 function displayUserbox() {
   print "<div class=\"userbox\">";
   print "  <span class=\"username\">Welcome " . $_SESSION['username'] . "</span>";
@@ -71,7 +75,11 @@ function displayUserbox() {
 function displayCartbox() {
   print "<div class=\"cartbox\">";
   print "  <img src=\"img/shopping_cart.png\" height=\"16px\" width=\"16px\" /> <a href=\"cart.php\">My Cart</a>&nbsp";
-  print "  <span class=\"item_in_cart\"></span>";
+  print "  <span class=\"items_in_cart\"></span>";
   print "</div>";
+}
+
+function functionFooter() {
+  print "<script>(function() { updateCartCount(); })();</script>";
 }
 ?>

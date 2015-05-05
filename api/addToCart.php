@@ -1,11 +1,17 @@
 <?php
   session_start();
-  require_once("common.php");
-  echo var_dump($_SESSION);
-/*
-  dbLogin();
-  dbSelect();
-  sql = 
-  echo "success";
-*/
+  $titleID = $_POST['itemID'];
+  $alreadyInCart = false;
+  foreach($_SESSION['cart'] as $item) {
+    if($titleID === $item) {
+      $alreadyInCart = true;
+      break;
+    }
+  }
+  if(!$alreadyInCart) {
+    $_SESSION['cart'][] = $titleID;
+    echo "1";
+  } else {
+    echo "-1";
+  }
 ?>

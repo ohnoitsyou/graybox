@@ -8,8 +8,6 @@ dbSelect();
 
 $sql = executeQuery("SELECT DISTINCT * FROM inventory;");
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,6 +27,9 @@ $sql = executeQuery("SELECT DISTINCT * FROM inventory;");
       </div>
     </div>
     <div class="statusbar">
+      <div class="locationbox">
+        <span>Locations</span>
+      </div>
       <div class="statusboxes">
         <?php displayUserbox(); ?>
         <?php displayCartbox(); ?>
@@ -63,5 +64,6 @@ $sql = executeQuery("SELECT DISTINCT * FROM inventory;");
   <div class="footer">
     <span>&copy; 2015 Team Zero Two Point Oh</span>
   </div>
+  <?php functionFooter(); ?>
 </body>
 </html>
