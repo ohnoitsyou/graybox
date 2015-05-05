@@ -1,3 +1,8 @@
+<?php
+session_start();
+require_once('api/common.php');
+loggedInCheck();
+?>
 <!--
 	Christian Nieva
 	3/20/15
@@ -9,53 +14,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"> 
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <!--
-  <link rel="stylesheet/less" type="tet/css" href="css/style.less">
-  <script src="js/less.js" type="text/javascript"></script>
-  -->
-    
     <script type="text/javascript"> //Insert values into MySQL database with AJAX
         $(document).ready(function(){
             $("#submit").click(function(){
-                
-                 var action=$('input[type="radio"]:checked').val();
-                 var children=$('input[type="radio"]:checked').val();
-                 var comedies=$('input[type="radio"]:checked').val();
-                 var documentaries=$('input[type="radio"]:checked').val();
-                 var dramas=$('input[type="radio"]:checked').val();
-                 var foreign=$('input[type="radio"]:checked').val();
-                 var horror=$('input[type="radio"]:checked').val();
-                 var sci_fi=$('input[type="radio"]:checked').val();
-                 var tv=$('input[type="radio"]:checked').val();
-                 var thrillers=$('input[type="radio"]:checked').val();
-                
+
+                 var action=$$('input:checked[type="radio"][name="action"]').pluck('value');
+                 var children=$('input:checked[type="radio"][name="children"]').pluck('value');
+                 var comedies=$('input:checked[type="radio"][name="comedies"]').pluck('value');
+                 var documentaries=$('input:checked[type="radio"][name="documentaries"]').pluck('value');
+                 var dramas=$('input:checked[type="radio"][name="dramas"]').pluck('value');
+                 var foreign=$('input:checked[type="radio"][name="foreign"]').pluck('value');
+                 var horror=$('input:checked[type="radio"][name="horror"]').pluck('value');
+                 var sci_fi=$('input:checked[type="radio"][name="sci_fi"]').pluck('value');
+                 var tv=$('input:checked[type="radio"][name="tv"]').pluck('value');
+                 var thrillers=$('input:checked[type="radio"][name="thrillers"]').pluck('value');
+
                 if($('input[type="radio"]:checked').length == "0"){
                     alert("Select any category");
                 }
                 else
                 {
-                    $.ajax({
-                        type: "POST",
-                        url: "setuserpreferences.php",
-                        
-                        data: "action="+action,
-                        data: "children="+children,
-                        data: "comedies="+comedies,
-                        data: "documentaries="+documentaries,
-                        data: "dramas="+dramas,
-                        data: "foreign="+foreign,
-                        data: "horror="+horror,
-                        data: "sci_fi="+sci_fi,
-                        data: "tv="+tv,
-                        data: "thrillers="+thrillers,
-                        
-                        success: function()
-                        {
-                            $("#msg").addClass('bg');
-                            $("#msg").html("value Entered");
+                    new Ajax.Request('api/setuserpreferences.php', {
+                        parameters: {
+                            "action" : action,
+                            "children" : children,
+                            "comedies" : comedies,
+                            "documentaries" : documentaries,
+                            "dramas" : dramas,
+                            "foreign" : foreign,
+                            "horror" : horror,
+                            "sci_fi" : sci_fi,
+                            "tv" : tv,
+                            "thrillers" : thrillers,
+
+                        },
+                        onSuccess: function(resp) {
+                            if(resp.responseText == "-1") {
+                                alert('Failure saving preferences');
+                            } else {
+                                console.log(resp);
+                                /*
+                                alert('Successfuly saved!');
+                                $("#msg").addClass('bg');
+                                $("#msg").html("value Entered");
+                                */
+                            }
+
+                        },
+                        onFailure: function(resp) {
+                            console.log('error');
+                            console.log(resp.responseText);
                         }
                     });
                 }
@@ -63,7 +74,7 @@
             });
         });
     </script>
-    
+
 </head>
 <body>
   <div class="header">
@@ -90,7 +101,7 @@
   </div>
   <div class="content">
     <div class="title"><h1>Which movies would you like to be featured ?<h1></div>
-    <div class="preferences_page"> 
+    <div class="preferences_page">
     <form action="" method="post"> <!-- **TAKE OFF FORM ACTION???? OR ADD??? ALREADY CALLING "setuserpreferences.php" within AJAX script tags -->
 		<table>
 			<tr>
@@ -161,12 +172,12 @@
 			</tr>
       <tr>
         <td><input type="submit" value="submit" id="submit" ></td>
-        <td>&nbsp</td> 
-        <td>&nbsp</td> 
-        <td>&nbsp</td> 
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
       </tr>
 		</table>
-   
+
     </form>
     </div>
   </div>
