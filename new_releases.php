@@ -60,6 +60,7 @@ $results = executeQuery($movie_query);
     }
     ?> 
     <p>
+	
       <a href="checkout1.html">Ready to checkout?</a>
     </p>
     <p>
