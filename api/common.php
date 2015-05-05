@@ -58,4 +58,20 @@ function getUserInfo($userid) {
             mysql_real_escape_string($userid));
   return executeQuery($query);
 }
+function addToCartButton($id) {
+  return "<input type=\"button\" value=\"Add To Cart\" onclick=\"addToCart($id)\" />";
+}
+
+function displayUserbox() {
+  print "<div class=\"userbox\">";
+  print "  <span class=\"username\">Welcome " . $_SESSION['username'] . "</span>";
+  print "</div>";
+}
+
+function displayCartbox() {
+  print "<div class=\"cartbox\">";
+  print "  <img src=\"img/shopping_cart.png\" height=\"16px\" width=\"16px\" /> <a href=\"cart.php\">My Cart</a>&nbsp";
+  print "  <span class=\"item_in_cart\"></span>";
+  print "</div>";
+}
 ?>
