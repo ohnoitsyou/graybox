@@ -59,8 +59,9 @@ $results = executeQuery($movie_query);
     <?php
     }
     ?> 
+	</br>
     <p>
-	  </br>
+	  Upcoming Movie!
 	  <div id="upcoming">  </div>
       <a href="checkout1.html">Ready to checkout?</a>
     </p>
