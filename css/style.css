@@ -247,3 +247,72 @@ body {
 .footer span {
   color: white;
 }
+body { 
+    font-family: Arial; 
+    font-size: 12; 
+    color: #000000; 
+} 
+  
+a:link { color: #ffffff; }
+        a:hover { color: #3b5998; }
+        a:active { color: #dfe3ee; }
+        a:visited { color: #dfe3ee; }
+        
+button[type=submit] {
+	        width:150px;
+	        height:40px;
+	        margin-left:5px;
+	        box-shadow:1px 1px 2px #d6ffff inset;
+	        cursor:pointer;
+        }
+button[type=submit] {
+	        text-align:center;
+	        background-color:#797980;
+            font-size: 17px;
+	        font-weight:bold;
+	        padding:5px;
+	        color:#FFFFFF;
+            float: right;
+        }
+  
+h1, h2 {margin-bottom: 15px} 
+  
+h1 {font-size: 18px;} 
+h2 {font-size: 16px} 
+  
+#container { 
+    width: 700px; 
+    margin: 150px auto; 
+    background-color: #eee; 
+    padding:15px; 
+    overflow: hidden; 
+} 
+  
+    #main { 
+        width: 490px; 
+        float: left; 
+    } 
+      
+        #main table { 
+            width: 480px; 
+        } 
+          
+            #main table th { 
+                padding: 10px; 
+                background-color: #797980; 
+                color: #cccccc; 
+                text-align: left; 
+            } 
+              
+            #main table td { 
+                padding: 5px; 
+            } 
+              
+            #main table tr { 
+                background-color: #cccccc; 
+            } 
+      
+    #sidemenu { 
+        width: 200px; 
+        float: left; 
+    }
