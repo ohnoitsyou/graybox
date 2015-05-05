@@ -74,7 +74,7 @@ function displayUserbox() {
 
 function displayCartbox() {
   print "<div class=\"cartbox\">";
-  print "  <img src=\"img/shopping_cart.png\" height=\"16px\" width=\"16px\" /> <a href=\"cart.php\">My Cart</a>&nbsp";
+  print "  <img src=\"img/shopping_cart.png\" height=\"16px\" width=\"16px\" /> <a href=\"cart2.php\">My Cart</a>&nbsp";
   print "  <span class=\"items_in_cart\"></span>";
   print "</div>";
 }
