@@ -1,7 +1,6 @@
 <?php
   session_start();
   include('api/common.php');
-  $_SESSION['username'] = 'cnieva';
   $username = $_SESSION['username'];
   $num_items_in_cart = 1;
 ?>
@@ -16,10 +15,6 @@
       return false;
       alert('filtering');
       var zipcode = document.getElementById('zipcode');
-      var XHR = new XMLHttpRequest();
-      XHR.onLoad = zipResp;
-      XHR.open("GET","api/narrowLocations.php");
-      XHR.send();
     }
     function zipResp(data) {
       console.log('RT:',this.responseText); 
