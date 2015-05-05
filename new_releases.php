@@ -69,5 +69,6 @@ $results = executeQuery($movie_query);
   <div class="footer">
     <span>&copy; 2015 Team Zero Two Point Oh</span>
   </div>
+  <script> (function(){grab_data()})(); </script>
 </body>
 </html>
