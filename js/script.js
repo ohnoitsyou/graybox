@@ -67,3 +67,23 @@ NodeList.prototype.remove = HTMLCollection.prototype.remove = function() {
         }
     }
 }
+//when mouse over big image
+function bigImg(x) {
+    x.style.height = "800px";
+    x.style.width = "500px";
+}
+
+
+//when mouse off normal image
+function normalImg(x) {
+    x.style.height = "400px";
+    x.style.width = "100px";
+}
+
+//grabs data to show images- remember need to "onLoad" (on loading page)
+
+function grab_data(){
+	//event handler fn
+		//functionName contains code to run when request is complete
+	new Ajax.Request("new_releases_data.php", onsucess: function(data) {console.log(data)});
+}
