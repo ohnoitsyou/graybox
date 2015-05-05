@@ -12,7 +12,7 @@ $results = executeQuery($movie_query);
   <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  
+  <script src="js/script.js" type="text/javascript"></script>
   <script src=" http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js" type="text/javascript"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js" type="text/javascript"></script>
 </head>
@@ -50,7 +50,7 @@ $results = executeQuery($movie_query);
     if(count($results) > 0 ){
       foreach($results as $movie) {
     ?>
-        <img src="img/<?php echo $movie['inventoryID']; ?>.jpg" alt="<?php echo $movie['iName']; ?>" height="500px" width="300px" onmouseover="bigImg(this)" onmouseout="normalImg(this)">
+        <img src="img/<?php echo $movie['inventoryID']; ?>.jpg" alt="<?php echo $movie['iName']; ?>" height="300px" width="250px" onmouseover="this.style.height='500px';this.style.width='300px';" onmouseout="this.style.height='300px';this.style.width='250px';">
     <?php
       }
     } else {
@@ -59,15 +59,21 @@ $results = executeQuery($movie_query);
     <?php
     }
     ?> 
+	</br>
     <p>
+	  Upcoming Movie!
+	  <div id="upcoming">  </div>
       <a href="checkout1.html">Ready to checkout?</a>
     </p>
     <p>
       <a href="return.html">Ready to return your movie?</a>
     </p>
   </div>
+  
+  
   <div class="footer">
     <span>&copy; 2015 Team Zero Two Point Oh</span>
   </div>
+  <script> (function(){grab_data()})(); </script>
 </body>
 </html>
