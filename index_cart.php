@@ -1,6 +1,6 @@
- <?php 
+<?php 
     session_start(); 
-    require("includes/connectivity.php"); 
+    require("connectivity.php"); 
     if(isset($_GET['page'])){ 
           
         $pages=array("products", "cart"); 
@@ -30,7 +30,7 @@
   
         <div id="main"> 
             
-            <?php require($_page.".php"); ?> 
+            <?php require($_page."products.php"); ?> 
   
         </div>
             <!--end of main--> 
