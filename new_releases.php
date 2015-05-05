@@ -12,11 +12,11 @@ $results = executeQuery($movie_query);
   <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <!--
-   <link rel="stylesheet/less" type="tet/css" href="css/style.less">
-  <script src="js/less.js" type="text/javascript"></script>
-  -->
+  
+  <script src=" http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js" type="text/javascript"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js" type="text/javascript"></script>
 </head>
+
 <body>
   <div class="header">
     <div class="navbar">
@@ -40,6 +40,9 @@ $results = executeQuery($movie_query);
       </div>
     </div>
   </div>
+  
+  <!-- ACTUAL CONTENT OF NEW_RELEASES!
+  5/5/15: added @ onmouseover="bigImg(this)" onmouseout="normalImg(this)" @-->
   <div class="content">
     <div class="title"><h1>New Releases<h1></div>
     <div class="new_releases_page">
@@ -47,7 +50,7 @@ $results = executeQuery($movie_query);
     if(count($results) > 0 ){
       foreach($results as $movie) {
     ?>
-        <img src="img/<?php echo $movie['inventoryID']; ?>.jpg" alt="<?php echo $movie['iName']; ?>" height="500px" width="300px">
+        <img src="img/<?php echo $movie['inventoryID']; ?>.jpg" alt="<?php echo $movie['iName']; ?>" height="500px" width="300px" onmouseover="bigImg(this)" onmouseout="normalImg(this)">
     <?php
       }
     } else {
