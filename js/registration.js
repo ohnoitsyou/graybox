@@ -1,33 +1,37 @@
+
 function validateUsername() {
     var usernameValidation =  document.getElementById("username").value;
-	new Ajax.Request("registration.php",
+	new Ajax.Request("registration_usercheck.php",
 	{ 
 		method: "post", 
 		parameters: {username:usernameValidation},
 		onSuccess: usernameExistence
 	} 
 	);
+
 }
 
 function usernameExistence(ajax){
     var r =ajax.responseText;
-	var available ="passwords match";
-    
-    if (r=='username taken'){
-        $("userbox").style.backgroundColor="red";
+    console.log(r);
+    if (r=="username available"){
+        console.log('username available');
+        $("userbox").style.backgroundColor="green";
         $("userbox").style.color="white";
         $("userbox").innerHTML =r;
         }
-    else {
-        $("userbox").style.backgroundColor="green";
+    else if (r=="username taken"){
+        console.log('username taken');
+        $("userbox").style.backgroundColor="red";
         $("userbox").style.color="white";
-        $("userbox").innerHTML =available;
+        $("userbox").innerHTML =r;
         }
         
 }
 
 function validatePassword(){
-	//retrieve value from the 'term' textbox
+    console.log('running');
+	/*
     var pword_Validation =  document.getElementById("pword").value;
     var pwordcheck_Validation =  document.getElementById("pwordcheck").value;
 	new Ajax.Request( "registration.php", 
@@ -36,14 +40,28 @@ function validatePassword(){
 		parameters: {pwordcheck:pwordcheck_Validation},
 		onSuccess: pwordEquality
 	} 
-	);
+	);*/
+    
+    var password1 = document.getElementById("pword").value;
+    var password2 = document.getElementById("pwordcheck").value;
+    console.log(password1);
+    
+    if(password1 == password2) {
+        console.log('passwords match');
+        $("pword").style.backgroundColor = "green";
+        $("pwordcheck").style.backgroundColor = "green";
+    } else {
+        console.log('passwords dont match');
+        $("pword").style.backgroundColor = "red";
+        $("pwordcheck").style.backgroundColor = "red";        
+    }
 }
-
+/*
 function pwordEquality(ajax){
     var r =ajax.responseText;
-	var match ="passwords match";
+	var match ="passwords dont match";
     
-    if (r=='passwords dont match'){
+    if (r=="passwords match"){
         $("passbox").style.backgroundColor="red";
         $("passbox").style.color="white";
         $("passbox").innerHTML =r;
@@ -55,7 +73,7 @@ function pwordEquality(ajax){
         }
         
 }
-
+*/
 function chkString() {
     var fname =  document.getElementById("fname").value;
     var lname =  document.getElementById("lname").value;
@@ -196,8 +214,10 @@ function chkString() {
         document.getElementById("card_zip").select();
         return false;     
         }  
+        
 //return true, else statement    
     else{
         return true;
         }
+
 }

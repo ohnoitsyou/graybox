@@ -4,10 +4,6 @@
   <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <!--
-   <link rel="stylesheet/less" type="tet/css" href="css/style.less">
-  <script src="js/less.js" type="text/javascript"></script>
-  -->
 </head>
 <body>
   <div class="header">
@@ -23,7 +19,7 @@
       </div>
       <div class="statusboxes">
         <div class="userbox">
-          <span class="username">Welcome cnieva</span>
+          <span class="username"></span>
         </div>
         <div class="cartbox">
           <img src="img/shopping_cart.png" height="16px" width="16px"/> My Cart&nbsp;
@@ -50,7 +46,7 @@
     $email = mysql_real_escape_string($_POST["email"]);
     $username = mysql_real_escape_string($_POST["username"]);
     $pword = mysql_real_escape_string($_POST["pword"]);
-    $pwordcheck = $_POST["pwordcheck"]; //will use javascript along with ajax to handle password check
+    $pwordcheck = mysql_real_escape_string($_POST["pwordcheck"]); //will use javascript along with ajax to handle password check
 
     //Delivery Information
     $address = mysql_real_escape_string($_POST["address"]);
@@ -67,22 +63,8 @@
     $card_ccv = mysql_real_escape_string($_POST["card_ccv"]);
     $card_zip = mysql_real_escape_string($_POST["card_zip"]);
 
-    //Create an array $userinfo[] --containing all usernames
-    $sql = mysql_query("select username from users");
-    $userinfo = array();
-    while ($row_user = mysql_fetch_assoc($sql))
-        {$userinfo[] = $row_user;}
 
-
-    if ($pword!=$pwordcheck){
-        $response="passwords dont match";
-        echo $response;
-    }
-    else if (in_array($username,$userinfo)){
-        $response="username taken";
-        echo $response;
-    }
-    else{
+ if ($pword == $pwordcheck){
         echo "Thank you $fname $lname for registering with Greybox, your convienient movie rental kiosk. <br />";
         echo "We appreciate you buisiness.";
 
@@ -102,10 +84,10 @@
         executeQuery($constructed_query1);
         executeQuery($constructed_query2);
 
-        echo "You are now a registered user. Rent away!";
+        echo "You are now a registered user. Rent away! <br /> <a href='new_releases.html'>Click here to view new releases.</a>  ";
+
     }
     ?>
-    <a href="new_releases.html">Click here to view new releases.</a>  
     </div>
         
         
