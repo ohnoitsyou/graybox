@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('api/common.php');
+loggedInCheck();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,10 +9,6 @@ include('api/common.php');
   <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <!--
-   <link rel="stylesheet/less" type="tet/css" href="css/style.less">
-  <script src="js/less.js" type="text/javascript"></script>
-  -->
 </head>
 <body>
 	<?php
@@ -23,20 +20,26 @@ include('api/common.php');
 		dbSelect();
 		
 		#construct query
-		$query ='SELECT inventory.inventoryID, inventory.iName, transaction.date FROM inventory, users, transactions WHERE
+		$query ="SELECT transactions.inventoryID, inventory.iName, transaction.date FROM inventory, users, transactions WHERE
 		$username = users.username and
 		users.username = users.userID and
-		transactions.userID = users.userID and
-		transactions.statusReturn ='N';'/*single or double quote around the "N"?*/
+		users.userID = transactions.userID and
+		transactions.statusReturn ='N' and
+		transactions.inventoryID = inventory.inventoryID and
+		inventory.inventoryID = inventory.iName;";
 		
 		executeQuery($query);
-		
-		$inventoryID = $resultsArray[inventoryID]; /*specify tables? inventory table*/
-		$iName = $resultsArray[iName];             /*inventory table */
-		$dateRented = $$resultsArray[date]         /*transactions table /////       reserved word?*/
-		$dateDue = date_add($dateRented, date_interval_create_from_date_string('7 days')); 
-		
-		
+
+		if(sizeof($query) = 0){
+			$MoviesOut = "false";
+		}
+		else{		
+			$inventoryID = $resultsArray[0]["inventoryID"]; /*specify tables? inventory table*/
+			$iName = $resultsArray[0]["iName"];             /*inventory table */
+			$dateRented = $$resultsArray[0]["date"];         /*transactions table // reserved word?*/
+			$dateDue = date_add($dateRented, date_interval_create_from_date_string('7 days'));
+			$MoviesOut = "true";
+		}
 	?>
   <div class="header">
     <div class="navbar">
@@ -66,14 +69,23 @@ include('api/common.php');
 	<div class="return_page">
 	  <div class="movie_cover"><img src="img/<?php echo $inventoryID; ?>.jpg" class="center" /></div>
 	  <div class="return_form">
-        <form method="post" action="return2.php"> 
-          <input type="checkbox" name="return" value="<?php echo $iName; ?>" checked>Return this movie
-          <br />
-		  Due postmarked by <?php echo $dueDate;?>
-          <br />
-		  <br />
-          <input type="submit" value="Submit" />
-        </form>
+	  <?php
+	    if ($moviesOut = "true"){
+          print "<form method="post" action="return2.php">";
+            print "<input type="checkbox" name="return" value=$iName checked>Return this movie";
+            print "<br />";
+		    print "Due postmarked by $dueDate;"
+            print "<br />";
+		    print "<br />";
+            print "<input type="submit" value="Submit" />";
+          print "</form>";
+		}
+		else{
+		  print "<p>";
+		  print "You must rent something before you can return it.";
+		  print "</p>";
+		}
+	  ?>
       </div>
     </div>
   </div>
