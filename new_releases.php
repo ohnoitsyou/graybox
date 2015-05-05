@@ -59,13 +59,18 @@ $results = executeQuery($movie_query);
     <?php
     }
     ?> 
+	</br>
     <p>
+	  Upcoming Movie!
+	  <div id="upcoming">  </div>
       <a href="checkout1.html">Ready to checkout?</a>
     </p>
     <p>
       <a href="return.html">Ready to return your movie?</a>
     </p>
   </div>
+  
+  
   <div class="footer">
     <span>&copy; 2015 Team Zero Two Point Oh</span>
   </div>

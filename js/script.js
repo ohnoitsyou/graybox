@@ -85,5 +85,5 @@ function normalImg(x) {
 function grab_data(){
 	//event handler fn
 		//functionName contains code to run when request is complete
-	new Ajax.Request("new_releases_data.php", onsucess: function(data) {console.log(data)});
+	new Ajax.Request("api/new_releases_data.php",{ onSuccess: function(data) {$("upcoming").update(data.responseText)}});
 }
