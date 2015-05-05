@@ -120,57 +120,57 @@ loggedInCheck();
 			</tr>
 			<tr>
 				<td class="row">Children &amp; Family</td>
-				<td><input type="radio" name="children" /></td>
-				<td><input type="radio" name="children" /></td>
-				<td><input type="radio" name="children" /></td>
+				<td><input type="radio" name="children" value="n" /></td>
+				<td><input type="radio" name="children"value="s" /><td>
+				<td><input type="radio" name="children" value="o"/></td>
 			</tr>
 			<tr>
 				<td class="row">Comedies</td>
-				<td><input type="radio" name="comedies" /></td>
-				<td><input type="radio" name="comedies" /></td>
-				<td><input type="radio" name="comedies" /></td>
+				<td><input type="radio" name="comedies" value="n" /></td>
+				<td><input type="radio" name="comedies" value="s"/></td>
+				<td><input type="radio" name="comedies" value="o"/></td>
 			</tr>
 			<tr>
 				<td class="row">Documentaries</td>
-				<td><input type="radio" name="documentaries" /></td>
-				<td><input type="radio" name="documentaries" /></td>
-				<td><input type="radio" name="documentaries" /></td>
+				<td><input type="radio" name="documentaries" value="n" /></td>
+				<td><input type="radio" name="documentaries" value="s"/></td>
+				<td><input type="radio" name="documentaries" value="o"/></td>
 			</tr>
 			<tr>
 				<td class="row">Dramas</td>
-				<td><input type="radio" name="dramas" /></td>
-				<td><input type="radio" name="dramas" /></td>
-				<td><input type="radio" name="dramas" /></td>
+				<td><input type="radio" name="dramas" value="n" /></td>
+				<td><input type="radio" name="dramas" value="s"/></td>
+				<td><input type="radio" name="dramas" value="o"/></td>
 			</tr>
 			<tr>
 				<td class="row">Foreign Movies</td>
-				<td><input type="radio" name="foreign" /></td>
-				<td><input type="radio" name="foreign" /></td>
-				<td><input type="radio" name="foreign" /></td>
+				<td><input type="radio" name="foreign" value="n" /></td>
+				<td><input type="radio" name="foreign" value="s"/></td>
+				<td><input type="radio" name="foreign" value="o"/></td>
 			</tr>
 			<tr>
 				<td class="row">Horror</td>
-				<td><input type="radio" name="horror" /></td>
-				<td><input type="radio" name="horror" /></td>
-				<td><input type="radio" name="horror" /></td>
+				<td><input type="radio" name="horror" value="n" /></td>
+				<td><input type="radio" name="horror" value="s"/></td>
+				<td><input type="radio" name="horror" value="o"/></td>
 			</tr>
 			<tr>
 				<td class="row">Sci-Fi &amp; Fantasy</td>
-				<td><input type="radio" name="sci_fi" /></td>
-				<td><input type="radio" name="sci_fi" /></td>
-				<td><input type="radio" name="sci_fi" /></td>
+				<td><input type="radio" name="sci_fi" value="n" /></td>
+				<td><input type="radio" name="sci_fi" value="s"/></td>
+				<td><input type="radio" name="sci_fi" value="o"/></td>
 			</tr>
 			<tr>
 				<td class="row">TV Shows</td>
-				<td><input type="radio" name="tv" /></td>
-				<td><input type="radio" name="tv" /></td>
-				<td><input type="radio" name="tv" /></td>
+				<td><input type="radio" name="tv" value="n" /></td>
+				<td><input type="radio" name="tv" value="s"/></td>
+				<td><input type="radio" name="tv" value="o"/></td>
 			</tr>
 			<tr>
 				<td class="row">Thrillers</td>
-				<td><input type="radio" name="thrillers" /></td>
-				<td><input type="radio" name="thrillers" /></td>
-				<td><input type="radio" name="thrillers" /></td>
+				<td><input type="radio" name="thrillers" value="n" /></td>
+				<td><input type="radio" name="thrillers" value="s"/></td>
+				<td><input type="radio" name="thrillers" value="o"/></td>
 			</tr>
       <tr>
         <td><input type="submit" value="submit" id="submit" onclick="return sendajax()"></td>
