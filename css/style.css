@@ -1,241 +1,69 @@
-body {
-  background-image: url('../img/14.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  z-index: -2;
-}
-.header {
-  clear: both;
-  background-color: gray;
-  color: white;
-}
-.header .navbar {
-  clear: both;
-  border: 1px solid black;
-  padding: 5px;
-}
-.header .navbar .quick_links {
-  display: inline;
-}
-.header .navbar .quick_links span {
-  margin-right: 10px;
-  padding-right: 5px;
-}
-.header .navbar .quick_links span:hover {
-  color: black;
-}
-.header .navbar .quick_links span::after {
-  content: url('../img/arrow-resize-rotate.png');
-  padding-left: 2px;
-  vertical-align: -1px;
-}
-.header .navbar .quick_links span:last-of-type {
-  border-right: 0px;
-}
-.header .navbar .logo {
-  margin-right: 10px;
-}
-.header .statusbar {
-  border: 1px solid black;
-  border-top: 0px;
-  padding: 5px;
-}
-.header .statusbar .locationbox {
-  display: inline;
-}
-.header .statusbar .locationbox span::after {
-  content: url('../img/arrow-resize-rotate.png');
-  padding-left: 2px;
-  vertical-align: -1px;
-}
-.header .statusbar .statusboxes {
-  float: right;
-}
-.header .statusbar .statusboxes .userbox {
-  display: inline;
-  margin-right: 10px;
-}
-.header .statusbar .statusboxes .cartbox {
-  display: inline;
-}
-.header .statusbar .statusboxes .cartbox img {
-  vertical-align: text-bottom;
-}
-.content {
-  width: 95%;
-  margin: auto;
-  margin-bottom: 100px;
-}
-.content .title {
-  border-bottom: 1px solid black;
-}
-.content .checkout_page {
-  width: 75%;
-  margin: auto;
-  margin-top: 15px;
-}
-.content .checkout_page .movie_cover {
-  float: left;
-  margin-right: 10px;
-}
-.content .checkout_page .movie_cover img {
-  height: 235px;
-  width: 166px;
-}
-.content .checkout_page #card_information td:first-child {
-  text-align: right;
-}
-.content .return_page {
-  width: 75%;
-  margin: auto;
-  margin-top: 15px;
-  text-align: center;
-}
-.content .return_page h1,
-.content .return_page h3 {
-  text-align: left;
-}
-.content .return_page .movie_cover img {
-  height: 235px;
-  width: 166px;
-  margin-left: auto;
-  margin-right: auto;
-  clear: both;
-}
-.content .return_page .return_form {
-  clear: both;
-  margin-left: auto;
-  margin-right: auto;
-}
-.content .return_page table,
-.content .return_page td {
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid black;
-  border-collapse: collapse;
-  width: 50%;
-  padding: 20px;
-}
-.content .return_page #t01 tr:nth-child(odd) {
-  background-color: #eee;
-}
-.content .preferences_page table {
-  margin: 0 auto;
-  width: 70%;
-  border: 2px solid black;
-  border-bottom: none;
-  border-top: none;
-  background: #F3F3F3;
-}
-.content .preferences_page table td {
-  text-align: center;
-}
-.content .preferences_page td {
-  text-align: center;
-}
-.content .preferences_page tr {
-  margin-left: 10px;
-  width: 95%;
-  float: right;
-}
-.content .preferences_page tr:nth-child(odd) {
-  background-color: #F3F3F3;
-}
-.content .preferences_page tr:nth-child(even) {
-  background-color: #E8E8E8;
-}
-.content .preferences_page th,
-.content .preferences_page td {
-  padding: 10px;
-  min-width: 150px;
-}
-.content .preferences_page .row {
-  font-weight: bolder;
-}
-.content .preferences_page input[type="radio"] {
-  width: 20px;
-  height: 20px;
-}
-.content .login_page {
-  background-image: url("../img/bg.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-clip: margin-box;
-  position: fixed;
-  top: -1px;
-  bottom: 1px;
-  left: 1px;
-  right: 1px;
-  z-index: -1;
-}
-.content .login_page form {
-  width: 400px;
-  margin: 0px auto;
-  margin-top: 50px;
-  padding: 10px;
-  background-color: #EBEBEB;
-  border-radius: 5px;
-  border: 1px solid black;
-}
-.content .login_page form h1 {
-  margin-top: 10px;
-}
-.content .login_page form input[type="text"] {
-  width: 100%;
-  height: 30px;
-  border: 1px solid black;
-  border-radius: 2px;
-}
-.content .login_page form #forgot {
-  color: #489DE9;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: right;
-}
-.content .login_page form #send {
-  margin: 10px 50px;
-  border: 1px solid black;
-  background-color: #FFFFFF;
-  padding: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  height: auto;
-  border-radius: 4px;
-}
-.content .login_page form #remember {
-  width: 12px;
-}
-.content .login_page form label {
-  padding: 10px 0px 0px;
-  display: block;
-  width: 100%;
-  float: left;
-}
-.content .registration_page #registrationForm td:first-child {
-  text-align: right;
-}
-.content .new_releases_page {
-  font-size: 15pt;
-  color: red;
-}
-.footer {
-  clear: both;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 25px;
-  background-color: gray;
-  text-align: center;
-  padding-top: 5px;
-}
-.footer span {
-  color: white;
-}
+body { 
+    font-family: Arial; 
+    font-size: 12; 
+    color: #000000; 
+} 
+  
+a:link { color: #ffffff; }
+        a:hover { color: #3b5998; }
+        a:active { color: #dfe3ee; }
+        a:visited { color: #dfe3ee; }
+        
+button[type=submit] {
+	        width:150px;
+	        height:40px;
+	        margin-left:5px;
+	        box-shadow:1px 1px 2px #d6ffff inset;
+	        cursor:pointer;
+        }
+button[type=submit] {
+	        text-align:center;
+	        background-color:#797980;
+            font-size: 17px;
+	        font-weight:bold;
+	        padding:5px;
+	        color:#FFFFFF;
+            float: right;
+        }
+  
+h1, h2 {margin-bottom: 15px} 
+  
+h1 {font-size: 18px;} 
+h2 {font-size: 16px} 
+  
+#container { 
+    width: 700px; 
+    margin: 150px auto; 
+    background-color: #eee; 
+    padding:15px; 
+    overflow: hidden; 
+} 
+  
+    #main { 
+        width: 490px; 
+        float: left; 
+    } 
+      
+        #main table { 
+            width: 480px; 
+        } 
+          
+            #main table th { 
+                padding: 10px; 
+                background-color: #797980; 
+                color: #cccccc; 
+                text-align: left; 
+            } 
+              
+            #main table td { 
+                padding: 5px; 
+            } 
+              
+            #main table tr { 
+                background-color: #cccccc; 
+            } 
+      
+    #sidemenu { 
+        width: 200px; 
+        float: left; 
+    }
