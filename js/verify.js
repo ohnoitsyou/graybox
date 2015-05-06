@@ -6,7 +6,7 @@
     */
 
 function displayWelcome() {
-    alert("Welcome! Thank you for choosing Graybox Rental!");
+// This had an alert in it. I removed it because it was annoying
 }
 
 
