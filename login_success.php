@@ -1,7 +1,7 @@
 <?php
 session_start();
 if($_SESSION['logged_in']) {
-  header("location:new_releases.html");
+  header("location:new_releases.php");
 } else {
   header("location:login.html");
 }

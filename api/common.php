@@ -68,7 +68,7 @@ function removeFromCartButton($id) {
 
 function displayUserbox() {
   print "<div class=\"userbox\">";
-  print "  <span class=\"username\">Welcome " . $_SESSION['username'] . "</span>";
+  print "  <span class=\"username\">Welcome " . $_SESSION['username'] . "</span> <span><a href=\"logout.php\">Logout?</a></span>";
   print "</div>";
 }
 

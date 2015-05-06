@@ -98,12 +98,12 @@ function chkString() {
     //RegEx patterns for textbox validation
         var fnamePattern = /^[a-z \-]+$/i;
         var lnamePattern = /^[a-z \-]+$/i;
-        var emailPattern = /^[a-z0-9!#$%&'*+\/=?\^_`{|}~\-]+(?:\.[a-z0-9!#$%&'*+\/=?\^_`{|}~\-]+)*@(?:[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum)\b$/i;
+        var emailPattern = /^[a-z0-9!#$%&'*+\/=?\^_`{|}~\-]+(?:\.[a-z0-9!#$%&'*+\/=?\^_`{|}~\-]+)*@(?:[a-z0-9](?:[a-z0-9\-]*[a-z0-9])?\.)+(?:[A-Z]{2}|com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum|edu)\b$/i;
         var usernamePattern = /^[a-z._0-9]+$/i;
         var addressPattern = /^[a-z0-9\s,'\-]*$/i;
         var cityPattern = /^[a-z\-]+$/i;
         var zipPattern = /^[0-9]{5}$/;
-        var card_NUMPattern = /^4[0-9]{12}[0-9]{3}|5[1-5][0-9]{14}|3[47][0-9]{13}|6(5[0-9]{2})[0-9]{12}/; //Visa|| MasterCard||American Express||Discover  
+        var card_NUMPattern = /^[0-9]{16}$/;
         var card_EXPPattern = /^(0[1-9]|1[012])\/\d{2}$/;
         var card_namePattern = /^[a-z ,.'-]+$/i;
         var card_ccvPattern = /^[0-9]+$/;
@@ -219,4 +219,5 @@ function chkString() {
     else{
         return true;
         }
+
 }
