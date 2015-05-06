@@ -8,10 +8,6 @@ session_destroy();
   <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <!--
-   <link rel="stylesheet/less" type="tet/css" href="css/style.less">
-  <script src="js/less.js" type="text/javascript"></script>
-  -->
 </head>
 <body>
   <div class="header">
@@ -23,9 +19,13 @@ session_destroy();
     </div>
   </div>
   <div class="content">
-    <div class="title"><h1><!-- add a title here --><h1></div>
-    <div class="_page"> <!-- change to <your_page_name>_page -->
-    <!-- Insert your content here -->
+    <div class="title"><h1>Logout Success!<h1></div>
+    <div class="_page">
+
+            <a href="http://userpages.umbc.edu/~dayoung1/is448/graybox/">
+                <img src="http://sheriff.oktibbeha.ms.us/images/Back_home_button.png" alt="Go back home">
+            </a>
+
     </div>
   </div>
   <div class="footer">
