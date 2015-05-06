@@ -10,7 +10,6 @@ if($_SESSION['logged_in']) {
 	IS448
 	Dr. Sampath
 	Login - Ajax, check if user is registered
-          - Javascript, display "Welcome!"
           - PHP, connect to database
 -->
 

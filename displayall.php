@@ -8,6 +8,15 @@ dbSelect();
 
 $sql = executeQuery("SELECT DISTINCT * FROM inventory where releaseDate < NOW();");
 ?>
+
+<!--
+	Christian Nieva
+	5/6/15
+	IS448
+	Dr. Sampath
+	Display all products
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +26,28 @@ $sql = executeQuery("SELECT DISTINCT * FROM inventory where releaseDate < NOW();
   <script src=" http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js" type="text/javascript"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js" type="text/javascript"></script>
   <script src="js/script.js" type="text/javascript"></script>
+    <style>
+        table {
+            width:100%;
+            }
+            table, th, td {
+            border-collapse: collapse;
+            }
+            th, td {
+            padding: 5px;
+            text-align: left;
+            }
+            table#t01 tr:nth-child(even) {
+            background-color: #eee;
+            }
+            table#t01 tr:nth-child(odd) {
+            background-color:#fff;
+            }
+            table#t01 th	{
+            background-color: black;
+            color: white;
+            }
+    </style>
 </head>
 <body>
   <div class="header">
@@ -37,6 +68,13 @@ $sql = executeQuery("SELECT DISTINCT * FROM inventory where releaseDate < NOW();
     <div class="title"><h1>New Releases<h1></div>
     <div class="new_releases_page">
       <table id='display' border="1" style="width:100%"> 
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Release Dare</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
     <?php 
       foreach($sql as $row) {
     ?>

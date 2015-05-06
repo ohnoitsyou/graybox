@@ -2,6 +2,15 @@
 session_start();
 session_destroy();
 ?>
+
+<!--
+	Christian Nieva
+	5/6/15
+	IS448
+	Dr. Sampath
+	Logout
+-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

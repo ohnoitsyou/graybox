@@ -2,8 +2,8 @@ body {
   background-image: url('../img/14.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
+  background-position: right bottom;
+  background-size: 500px;
   top: 0px;
   bottom: 0px;
   left: 0px;
@@ -312,33 +312,4 @@ h2 {font-size: 16px}
     background-color: #eee; 
     padding:15px; 
     overflow: hidden; 
-} 
-  
-    #main { 
-        width: 490px; 
-        float: left; 
-    } 
-      
-        #main table { 
-            width: 480px; 
-        } 
-          
-            #main table th { 
-                padding: 10px; 
-                background-color: #797980; 
-                color: #cccccc; 
-                text-align: left; 
-            } 
-              
-            #main table td { 
-                padding: 5px; 
-            } 
-              
-            #main table tr { 
-                background-color: #cccccc; 
-            } 
-      
-    #sidemenu { 
-        width: 200px; 
-        float: left; 
-    }
+}
