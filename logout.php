@@ -17,12 +17,6 @@
         <span><a href="login.html">Home</a></span><span><a href="new_releases.php">New Releases</a></span><span><a href="displayall.php">Available titles to rent</a></span>
       </div>
     </div>
-    <div class="statusbar">
-      <div class="statusboxes">
-          <?php displayUserbox(); ?>
-        <?php displayCartbox(); ?>
-      </div>
-    </div>
   </div>
   <div class="content">
     <div class="title"><h1><!-- add a title here --><h1></div>
@@ -33,6 +27,5 @@
   <div class="footer">
     <span>&copy; 2015 Team Zero Two Point Oh</span>
   </div>
-         <?php functionFooter(); ?>
 </body>
 </html>
