@@ -12,5 +12,6 @@ if($_SESSION['logged_in']) {
 </head>
 <body>
   <p>Login Successful</p>
+     <?php functionFooter(); ?>
 </body>
 </html>

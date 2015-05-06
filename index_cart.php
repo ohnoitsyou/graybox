@@ -77,5 +77,6 @@
     </div>
         <!--end container--> 
   
+     <?php functionFooter(); ?>
 </body> 
 </html>

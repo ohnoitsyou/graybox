@@ -69,3 +69,4 @@
         ?> 
           
     </table>
+ <?php functionFooter(); ?>

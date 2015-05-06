@@ -63,3 +63,5 @@
 </form> 
 <br /> 
 <p>To reset, set quantity to zero.</p>
+
+ <?php functionFooter(); ?>
