@@ -49,6 +49,7 @@ if(count($results) <= 0) {
     <div class="itemDetails_page">
       <div class="movie_cover"><img src="img/<?php echo $results[0]['inventoryID']; ?>.jpg" /></div>
       <div class="movie_description"><?php echo $results[0]['iDescription']; ?></div>
+      <?php echo addToCartButton($results[0]['inventoryID']); ?> 
     </div>
     <div style="clear:both"></div>
   </div>

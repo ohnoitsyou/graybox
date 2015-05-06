@@ -43,9 +43,7 @@ if(count($_SESSION['cart']) > 0) {
   <div class="content">
     <div class="title"><h1>View cart</h1></div>
     <div class="cart_page">
-      <a href="index_cart.php?page=products">Go back to available titles!</a> 
       <?php if($itemsInCart) { ?>
-      <form method="post" action="index_cart.php?page=cart"> 
         <table id="cart"> 
           <tr> 
             <th>Name</th> 
@@ -67,11 +65,8 @@ if(count($_SESSION['cart']) > 0) {
             <td colspan="4">Total Price: <span id="totalCost"><?php echo sprintf('%01.2f',$totalprice) ?></span>$</td> 
           </tr> 
         </table> 
-        <br /> 
-        <button type="submit" name="submit">Update Cart</button> 
-      </form> 
+      <p><a href="checkout1.php">Ready to checkout?</a></p>
       <br /> 
-      <p>To reset, set quantity to zero.</p>
       <?php } else { ?>
       <p><a href="displayall.php">Go rent something!</a></p>
       <?php } ?>

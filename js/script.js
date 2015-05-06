@@ -80,6 +80,14 @@ function normalImg(x) {
     x.style.width = "100px";
 }
 
+function getLocations() {
+  new Ajax.Request('api/getLocations.php',{
+    onSuccess: function(data) {
+      $("locations").update(data.responseText);
+    }
+  });
+}
+
 //grabs data to show images- remember need to "onLoad" (on loading page)
 
 function grab_data(){

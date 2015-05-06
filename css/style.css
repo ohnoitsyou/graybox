@@ -83,6 +83,9 @@ body {
   margin: auto;
   margin-top: 15px;
 }
+.content .checkout_page .coverflow {
+   
+}
 .content .checkout_page .movie_cover {
   float: left;
   margin-right: 10px;
@@ -93,6 +96,13 @@ body {
 }
 .content .checkout_page #card_information td:first-child {
   text-align: right;
+}
+body > div.content > div.checkout_page > div.move_title,
+.content .checkout_form {
+  clear: both;
+}
+body > div.content > div.checkout_page > div.move_title {
+  padding-top: 10px;;
 }
 .content .itemDetails_page {
   width: 75%;
