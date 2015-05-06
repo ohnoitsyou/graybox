@@ -1,50 +1,35 @@
 <?php
 session_start();
-include('api/common.php');
+require_once('api/common.php');
+loggedInCheck();
 
 dbLogin();
 dbSelect();
 
-$iName = 'iName';
-$iDescription = 'iDescription';
-$releaseDate = 'releaseDate';
-$price = 'price';
-
-$sql = mysql_query("SELECT DISTINCT * FROM inventory;");
+$sql = executeQuery("SELECT DISTINCT * FROM inventory;");
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <!--
-   <link rel="stylesheet/less" type="tet/css" href="css/style.less">
-  <script src="js/less.js" type="text/javascript"></script>
-  -->
+  <script src=" http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js" type="text/javascript"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js" type="text/javascript"></script>
+  <script src="js/script.js" type="text/javascript"></script>
 </head>
 <body>
   <div class="header">
     <div class="navbar">
       <span class="logo">Graybox powered by RentalVideo&copy;</span>
       <div class="quick_links">
-        <span>Home</span><span>New Releases</span><span>Movies</span><span>TV Shows</span>
+        <span><a href="login.html">Home</a></span><span><a href="new_releases.php">New Releases</a></span><span><a href="displayall.php">Available titles to rent</a></span>
       </div>
     </div>
     <div class="statusbar">
-      <div class="locationbox">
-        <span>Locations</span>
-      </div>
       <div class="statusboxes">
-        <div class="userbox">
-          <span class="username">Welcome cnieva</span>
-        </div>
-        <div class="cartbox">
-          <img src="img/shopping_cart.png" height="16px" width="16px"/> My Cart&nbsp;
-          <span class="items_in_cart">1</span>
-        </div>
+        <?php displayUserbox(); ?>
+        <?php displayCartbox(); ?>
       </div>
     </div>
   </div>
@@ -53,13 +38,14 @@ $sql = mysql_query("SELECT DISTINCT * FROM inventory;");
     <div class="new_releases_page">
       <table id='display' border="1" style="width:100%"> 
     <?php 
-        while($rows = mysql_fetch_array($sql)) { 
+      foreach($sql as $row) {
     ?>
        <tr>
-           <td><?php echo $rows[$iName]; ?></td>
-           <td><?php echo $rows[$iDescription]; ?></td>
-           <td><?php echo $rows[$releaseDate]; ?></td>
-           <td><?php echo $rows[$price]; ?></td>
+           <td><?php echo $row["iName"]; ?></td>
+           <td><?php echo $row["iDescription"]; ?></td>
+           <td><?php echo $row["releaseDate"]; ?></td>
+           <td><?php echo $row["price"]; ?></td>
+           <td><?php echo addToCartButton($row["inventoryID"]) ?></td>
       </tr>
      <?php   
         } 
@@ -75,5 +61,6 @@ $sql = mysql_query("SELECT DISTINCT * FROM inventory;");
   <div class="footer">
     <span>&copy; 2015 Team Zero Two Point Oh</span>
   </div>
+  <?php functionFooter(); ?>
 </body>
 </html>

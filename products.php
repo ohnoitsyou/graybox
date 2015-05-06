@@ -73,3 +73,5 @@ session_start()
         ?> 
           
     </table>
+
+ <?php functionFooter(); ?>

@@ -10,14 +10,12 @@
     <div class="navbar">
       <span class="logo">Graybox powered by RentalVideo&copy;</span>
       <div class="quick_links">
-        <span>Home</span><span>New Releases</span><span>Movies</span><span>TV Shows</span>
-      </div>
+     <span><a href="login.html">Home</a></span><span><a href="new_releases.php">New Releases</a></span><span><a href="displayall.php">Available titles to rent</a></span>
     </div>
     <div class="statusbar">
-      <div class="locationbox">
-        <span>Locations</span>
-      </div>
       <div class="statusboxes">
+          <?php displayUserbox(); ?>
+        <?php displayCartbox(); ?>
         <div class="userbox">
           <span class="username"><a href="login.html">Login</a></span>
         </div>
@@ -43,5 +41,8 @@
   <div class="footer">
     <span>&copy; 2015 Team Zero Two Point Oh</span>
   </div>
+         <?php functionFooter(); ?>
 </body>
 </html>
+
+
