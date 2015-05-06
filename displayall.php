@@ -10,7 +10,7 @@ $iDescription = 'iDescription';
 $releaseDate = 'releaseDate';
 $price = 'price';
 
-$sql = mysql_query("SELECT DISTINCT * FROM inventory;");
+$sql = mysql_query("SELECT DISTINCT * FROM inventory where releaseDate < NOW();");
 ?>
 
 
