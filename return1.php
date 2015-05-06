@@ -9,6 +9,10 @@ loggedInCheck();
   <meta charset="utf-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  
+  <script src=" http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js" type="text/javascript"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js" type="text/javascript"></script>
+  <script src"js/return.js" type="text/javascript"></script>
 </head>
 <body>
 	<?php
@@ -20,39 +24,35 @@ loggedInCheck();
 		dbSelect();
 		
 		#construct query
-		$query ="SELECT transactions.inventoryID, inventory.iName, transaction.date FROM inventory, users, transactions WHERE
-		$username = users.username and
-		users.username = users.userID and
+		$query ="SELECT transactions.transactionID, transactions.inventoryID, transactions.dueDate, inventory.iName FROM inventory, users, transactions WHERE
+		\"$username\" = users.username and
 		users.userID = transactions.userID and
 		transactions.statusReturn ='N' and
-		transactions.inventoryID = inventory.inventoryID and
-		inventory.inventoryID = inventory.iName;";
+		transactions.inventoryID = inventory.inventoryID;";
 		
-		executeQuery($query);
+		$resultsArray=executeQuery($query);
 
-		if(sizeof($query) = 0){
-			$MoviesOut = "false";
+		if(count($resultsArray) > 0){
+			$MoviesOut = true;
 		}
-		else{		
-			$inventoryID = $resultsArray[0]["inventoryID"]; /*specify tables? inventory table*/
-			$iName = $resultsArray[0]["iName"];             /*inventory table */
-			$dateRented = $$resultsArray[0]["date"];         /*transactions table // reserved word?*/
-			$dateDue = date_add($dateRented, date_interval_create_from_date_string('7 days'));
-			$MoviesOut = "true";
+		else{			
+			$MoviesOut = false;
 		}
 	?>
   <div class="header">
     <div class="navbar">
       <span class="logo">Graybox powered by RentalVideo&copy;</span>
       <div class="quick_links">
-      <span><a href="login.html">Home</a></span><span><a href="new_releases.php">New Releases</a></span><span><a href="displayall.php">Available titles to rent</a></span>
+        <span>Home</span><span>New Releases</span><span>Movies</span><span>TV Shows</span>
       </div>
     </div>
     <div class="statusbar">
+      <div class="locationbox">
+        <span>Locations</span>
+      </div>
       <div class="statusboxes">
         <div class="userbox">
-            <?php displayUserbox(); ?>
-        <?php displayCartbox(); ?>
+          <span class="username">Welcome <?php $username ?></span>
         </div>
         <div class="cartbox">
           <img src="img/shopping_cart.png" height="16px" width="16px"/> My Cart&nbsp;
@@ -65,31 +65,32 @@ loggedInCheck();
     <div class="title"><h1>Return Movies<h1></div>
 	<h1>Movies Currently Out:</h1>
 	<div class="return_page">
-	  <div class="movie_cover"><img src="img/<?php echo $inventoryID; ?>.jpg" class="center" /></div>
-	  <div class="return_form">
+	  
 	  <?php
-	    if ($moviesOut = "true"){
-          print "<form method="post" action="return2.php">";
-            print "<input type="checkbox" name="return" value=$iName checked>Return this movie";
-            print "<br />";
-		    print "Due postmarked by $dueDate;"
-            print "<br />";
-		    print "<br />";
-            print "<input type="submit" value="Submit" />";
-          print "</form>";
-		}
-		else{
-		  print "<p>";
-		  print "You must rent something before you can return it.";
-		  print "</p>";
-		}
+	    if ($moviesOut){
+			print "<table>";
+			for ($i=0; $i<count($resultsArray); $i++) {
+			  print "<form method=\"post\" action=\"return2.php\">"; /*return form*/
+		      print "<div class=\"return_form\">";
+			  print "<div class=\"movie_cover\"><tr><td><img id=\"img1\" src=\"img/" . $resultsArray[$i]["inventoryID"] . ".jpg\" class=\"center\" onHover=\"coverHover()\" /></td></tr></div>";/*close movie_cover div*/
+			  print "<tr><td><input type=\"submit\" name=\" value=\"" . $iName . "\" />Return this movie</td></tr>";
+			  print "<input type=\"hidden\" name=\"txid\" value=\"" . $resultsArray[$i]["transactionID"] . "\" />";
+              print "<tr><td><input type=\"button\" value=\"Extend Rental\" onclick=\"extendRental(\"$transactionID\",\"$inventoryID\")\" /></td></tr>";
+              print "</form></div>";/*close return_form div */
+			  print "<tr></tr>";
+			}
+			print "</table>";
+	    }
+	    else{
+	      print "<p id=\"para1\" onhover=\"paraHover()\">";
+	      print "You must rent something before you can return it.";
+	      print "</p>";
+ 	    }
 	  ?>
-      </div>
-    </div>
-  </div>
+    </div> <!--close return_page div-->
+  </div> <!--close content div-->
   <div class="footer">
     <span>&copy; 2015 Team Zero Two Point Oh</span>
   </div>
-         <?php functionFooter(); ?>
 </body>
 </html>
