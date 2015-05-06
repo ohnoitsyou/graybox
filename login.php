@@ -1,3 +1,9 @@
+<?php
+session_start();
+if($_SESSION['logged_in']) {
+  header('Location: new_releases.php');
+}
+?>
 <!--
 	Christian Nieva
 	5/6/15
@@ -60,6 +66,5 @@
   <div class="footer">
     <span>&copy; 2015 Team Zero Two Point Oh</span>
   </div>
-     <?php functionFooter(); ?>
 </body>
 </html>

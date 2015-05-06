@@ -47,6 +47,7 @@ if(count($_SESSION['cart']) > 0) {
       </div>
     </div>
   </div>
+  <div style="clear:both"></div>
   <div class="content">
     <?php if($itemsInCart) { ?>
     <div class="title"><h1>Checkout<h1></div>

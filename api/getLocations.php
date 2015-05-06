@@ -7,7 +7,7 @@ $results = executeQuery($sql);
 $returnString = "";
 for($i = 0; $i < count($results); $i++) {
   //$returnString += "<option value=\"$results['locationID']\">$results['address'] $results['state'] , $results['zipcode'] </option>";
+  $returnString += "<option></option>";
 }
-//echo $returnString;
-echo "something";
+ echo $returnString;
 ?>

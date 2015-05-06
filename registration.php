@@ -1,3 +1,7 @@
+<?php
+session_start();
+require_once('api/common.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,8 +32,7 @@
   
     <div class="title"><h1>Thank You<h1></div>
     <div class="registration_page"> 
-    <?php
-    include('api/common.php');
+    <?
     //Database Connection
     dbLogin();
     //Select Database
@@ -77,11 +80,13 @@
             VALUES ($last_id,'$card_type', '$card_NUM', '$card_EXP', '$card_name', '$card_ccv', '$card_zip');"//to end insert statement
         ;//to end constructed query
 
-        executeQuery($constructed_query1);
-        executeQuery($constructed_query2);
-
-        echo "You are now a registered user. Rent away! <br /> <a href='new_releases.html'>Click here to view new releases.</a>  ";
-
+        $query1 = executeQuery($constructed_query1);
+        $query2 = executeQuery($constructed_query2);
+        if($query1 && $query2) {
+          echo "You are now a registered user. Please <a href=\"login.php\">login</a>"; 
+        } else {
+          echo "User create faailure<br />Please <a href=\"registration.php\">register again</a>";
+        }
     }
     ?>
     </div>
@@ -91,7 +96,6 @@
   <div class="footer">
     <span>&copy; 2015 Team Zero Two Point Oh</span>
   </div>
-         <?php functionFooter(); ?>
 </body>
 </html>
 

@@ -6,7 +6,7 @@ loggedInCheck();
 dbLogin();
 dbSelect();
 
-$sql = mysql_query("SELECT DISTINCT * FROM inventory where releaseDate < NOW();");
+$sql = executeQuery("SELECT DISTINCT * FROM inventory where releaseDate < NOW();");
 ?>
 <!DOCTYPE html>
 <html lang="en">

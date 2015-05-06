@@ -45,6 +45,7 @@ body {
   border: 1px solid black;
   border-top: 0px;
   padding: 5px;
+  text-align: right;
 }
 .header .statusbar .locationbox {
   display: inline;
@@ -55,7 +56,6 @@ body {
   vertical-align: -1px;
 }
 .header .statusbar .statusboxes {
-  float: right;
 }
 .header .statusbar .statusboxes .userbox {
   display: inline;
