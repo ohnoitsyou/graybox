@@ -74,13 +74,13 @@ require_once('api/common.php');
                 '$address', '$suite', '$city', '$state', '$zip', CURDATE() 
             );"//to end insert statement
         ;//to end constructed query
+        $query1 = executeQuery($constructed_query1);
         //Insert Statement: Contructed Query 2: Payment Info
         $last_id = mysql_insert_id();
         $constructed_query2 = "INSERT INTO payment_info (card_owner, card_type, card_NUM, card_EXP, card_name, card_ccv, card_zip) 
             VALUES ($last_id,'$card_type', '$card_NUM', '$card_EXP', '$card_name', '$card_ccv', '$card_zip');"//to end insert statement
         ;//to end constructed query
 
-        $query1 = executeQuery($constructed_query1);
         $query2 = executeQuery($constructed_query2);
         if($query1 && $query2) {
           echo "You are now a registered user. Please <a href=\"login.php\">login</a>"; 

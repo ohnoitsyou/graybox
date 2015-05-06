@@ -35,9 +35,6 @@ if(count($results) <= 0) {
       </div>
     </div>
     <div class="statusbar">
-      <div class="locationbox">
-        <span>Locations</span>
-      </div>
       <div class="statusboxes">
         <?php displayUserbox(); ?>
         <?php displayCartbox(); ?>

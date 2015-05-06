@@ -39,7 +39,7 @@ function executeQuery($query) {
 
 function loggedInCheck() {
   if(!$_SESSION['logged_in']) {
-    header('Location: login.html');
+    header('Location: login.php');
   }
 }
 

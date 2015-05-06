@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('api/common.php');
+loggedInCheck();
 dbLogin();
 dbSelect();
 $movie_query = "SELECT DISTINCT inventoryID from inventory where releaseDate between DATE_SUB(Now(), INTERVAL 30 DAY) AND NOW() ORDER BY inventoryID DESC LIMIT 5;";
@@ -22,7 +23,7 @@ $results = executeQuery($movie_query);
     <div class="navbar">
       <span class="logo">Graybox powered by RentalVideo&copy;</span>
       <div class="quick_links">
-        <span><a href="login.html">Home</a></span><span><a href="new_releases.php">New Releases</a></span><span><a href="displayall.php">Available titles to rent</a></span>
+        <span><a href="login.php">Home</a></span><span><a href="new_releases.php">New Releases</a></span><span><a href="displayall.php">Available titles to rent</a></span>
       </div>
     </div>
     <div class="statusbar">
@@ -42,7 +43,7 @@ $results = executeQuery($movie_query);
     if(count($results) > 0 ){
       foreach($results as $movie) {
     ?>
-	<a href="itemdetail.php?itemid=<?php echo $movie['inventoryID'];?>">
+	<a href="itemDetail.php?itemID=<?php echo $movie['inventoryID'];?>">
         <img src="img/<?php echo $movie['inventoryID']; ?>.jpg" alt="<?php echo $movie['iName']; ?>" height="300px" width="250px" onmouseover="this.style.height='500px';this.style.width='300px';" onmouseout="this.style.height='300px';this.style.width='250px';">
 	</a>
     <?php
