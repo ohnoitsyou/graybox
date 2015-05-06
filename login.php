@@ -14,12 +14,7 @@
     <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript"  src="verify.js"></script>
-    <!--
-  <link rel="stylesheet/less" type="tet/css" href="css/style.less">
-  <script src="js/less.js" type="text/javascript"></script>
-  -->
-    
+    <script type="text/javascript"  src="js/verify.js"></script>
     <script type="text/javascript">
         $("#username").keyup(function (e) { //user types username on input field, once user stops typing, AJAX retrieves and matches username
             var username = $(this).val(); //get the string typed by user
@@ -35,7 +30,7 @@
     <div class="navbar">
       <span class="logo">Graybox powered by RentalVideo&trade;</span>
       <div class="quick_links">
-          <span><a href="login.html">Home</a></span><span><a href="new_releases.php">New Releases</a></span><span><a href="displayall.php">Available titles to rent</a></span>
+          <span>Home</span>
       </div>
     </div>
   </div>
