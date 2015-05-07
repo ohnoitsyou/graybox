@@ -282,7 +282,7 @@ body {
 a:link { color: #000000; }
         a:hover { color: ##515151; }
         a:active { color: #515151; }
-        a:visited { color: #515151; }
+        a:visited { color: #282828; }
         
 button[type=submit] {
 	        width:150px;
