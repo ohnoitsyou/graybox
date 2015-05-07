@@ -66,7 +66,7 @@ loggedInCheck();
 			  print "      <tr><td>Due postmarked by: " . $resultsArray[$i]["dueDate"] . " </td></tr>";
 			  print "      <tr><td><input type=\"submit\" value=\"Return '" . $resultsArray[$i]["iName"] . "'\" /></td></tr>";
 			  print "      <input type=\"hidden\" name=\"txid\" value=\"" . $resultsArray[$i]["transactionID"] . "\" />";
-        print "      <tr><td><input type=\"button\" value=\"Extend Rental of '" . $resultsArray[$i]["iName"]  . "\" onclick=\"extendRental(\"$transactionID\",\"$inventoryID\")\" /></td></tr>";
+        print "      <tr><td><input type=\"button\" value=\"Extend Rental of '" . $resultsArray[$i]["iName"]  . "'\" onclick=\"extendRental(\"$transactionID\",\"$inventoryID\")\" /></td></tr>";
         print "</div></form>";/*close return_form div */
 			  print "<tr></tr>";
 			}
