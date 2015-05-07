@@ -68,6 +68,7 @@ loggedInCheck();
 	    <tr><td>Customer ID:</td><td><?php $username ?></td></tr>
 		<tr><td>Movie ID:</td><td><?php $returnedMovie ?></td></tr>
 	  </table>
+	  <a href="return1.php"><h4>Have another movie to return?</a></h4>
     </div>
   </div>
   <div class="footer">
