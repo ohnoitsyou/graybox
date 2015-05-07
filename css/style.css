@@ -12,7 +12,7 @@ body {
 }
 .header {
   clear: both;
-  background-color: gray;
+  background-color: #325da7;
   color: white;
 }
 .header .navbar {
@@ -72,7 +72,7 @@ body {
   margin: auto;
   margin-top: 10px;
   margin-bottom: 100px;
-  background-color: lightgray;
+  background-color: #f7f7f7;
   border: 1px solid black;
 }
 .content .title {
@@ -81,6 +81,7 @@ body {
 .content .checkout_page {
   width: 75%;
   margin: auto;
+  margin-top: 15px;
   margin-top: 15px;
 }
 .content .checkout_page .coverflow {
@@ -174,7 +175,7 @@ body > div.content > div.checkout_page > div.move_title {
   background-color: #F3F3F3;
 }
 .content .preferences_page tr:nth-child(even) {
-  background-color: #E8E8E8;
+  background-color: #f68c06;
 }
 .content .preferences_page th,
 .content .preferences_page td {
@@ -235,7 +236,8 @@ body > div.content > div.checkout_page > div.move_title {
 .content .login_page form #send {
   margin: 10px 50px;
   border: 1px solid black;
-  background-color: #FFFFFF;
+  background-color: #f68c06;
+  box-shadow:1px 1px 2px #325da7 inset;
   padding: 10px;
   font-size: 18px;
   font-weight: bold;
@@ -257,7 +259,7 @@ body > div.content > div.checkout_page > div.move_title {
 .content .new_releases_page {
   padding-top: 10px;
   font-size: 15pt;
-  color: red;
+  color: black;
 }
 .footer {
   clear: both;
@@ -266,7 +268,7 @@ body > div.content > div.checkout_page > div.move_title {
   left: 0;
   right: 0;
   height: 25px;
-  background-color: gray;
+  background-color: #325da7;
   text-align: center;
   padding-top: 5px;
 }
@@ -279,16 +281,16 @@ body {
     color: #000000; 
 } 
   
-a:link { color: #000000; }
-        a:hover { color: ##515151; }
-        a:active { color: #515151; }
-        a:visited { color: #282828; }
+a:link { color: #ffffff; }
+        a:hover { color: #f68c06; }
+        a:active { color: #f68c06; }
+        a:visited { color: #f7f7f7; }
         
 button[type=submit] {
 	        width:150px;
 	        height:40px;
 	        margin-left:5px;
-	        box-shadow:1px 1px 2px #d6ffff inset;
+	        box-shadow:1px 1px 2px #325da7 inset;
 	        cursor:pointer;
         }
 button[type=submit] {
@@ -297,7 +299,7 @@ button[type=submit] {
             font-size: 17px;
 	        font-weight:bold;
 	        padding:5px;
-	        color:#FFFFFF;
+	        color:#f68c06;
             float: right;
         }
   
