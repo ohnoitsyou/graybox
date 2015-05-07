@@ -61,7 +61,7 @@ loggedInCheck();
 			for ($i=0; $i<count($resultsArray); $i++) {
 			  print "<form method=\"post\" action=\"return2.php\">"; /*return form*/
         print "  <div class=\"return_form\">";
-			  print "    <div class=\"movie_cover\"><tr><td><img id=\" $resultsArray[$i]["inventoryID"] \" src=\"img/" . $resultsArray[$i]["inventoryID"] . ".jpg\" class=\"center\" onHover=\"coverHover()\" /></td></tr></div>";/*close movie_cover div*/
+			  print "    <div class=\"movie_cover\"><tr><td><img id=\" $resultsArray[$i]["inventoryID"] \" src=\"img/" . $resultsArray[$i]["inventoryID"] . ".jpg\" class=\"center\" onHover=\"coverHover($resultsArray[$i]["inventoryID"])\" /></td></tr></div>";/*close movie_cover div*/
 			  print "      <tr><td>Due postmarked by: " . $resultsArray[$i]["dueDate"] . " </td></tr>";
 			  print "      <tr><td><input type=\"submit\" value=\"Return '" . $resultsArray[$i]["iName"] . "'\" /></td></tr>";
 			  print "      <input type=\"hidden\" name=\"txid\" value=\"" . $resultsArray[$i]["transactionID"] . "\" />";
