@@ -8,11 +8,8 @@ $username = $_SESSION['username'];
 dbLogin();
 dbSelect();
 
-#construct query
-/*$query = "UPDATE transactions SET dueDate /*add a week * / WHERE $transactionID = transactions.transactionsID;";*/
 
-
-$dueDate = executeQuery("date_add(dueDate, date_interval_create_from_date_string('7 days'));");
+$dueDate = executeQuery("update transactions set dueDate = date_add(dueDate,interval 7 day));");
 
 #if result object is not returned, then print an error and exit the PHP program
 if(! $write_result){
