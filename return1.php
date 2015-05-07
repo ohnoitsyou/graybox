@@ -55,9 +55,8 @@ loggedInCheck();
     <div class="title"><h1>Return Movies<h1></div>
 	<h1>Movies Currently Out:</h1>
 	<div class="return_page">
-	  
 	  <?php
-	    if ($moviesOut){
+	    if ($moviesOut) {
 			print "<table>";
 			for ($i=0; $i<count($resultsArray); $i++) {
 			  print "<form method=\"post\" action=\"return2.php\">"; /*return form*/
@@ -72,8 +71,7 @@ loggedInCheck();
 			  print "<tr></tr>";
 			}
 			print "</table>";
-	    }
-	    else{
+	    } else {
 	      print "<p id=\"para1\" onhover=\"paraHover()\">";
 	      print "You must rent something before you can return it.";
 	      print "</p>";
@@ -84,5 +82,6 @@ loggedInCheck();
   <div class="footer">
     <span>&copy; 2015 Team Zero Two Point Oh</span>
   </div>
+  <?php functionFooter() ?>
 </body>
 </html>

@@ -1,3 +1,4 @@
+/* David Young and Jon Ko */
 function addToCart(id) {
   new Ajax.Request('api/addToCart.php', {
     parameters: {
@@ -94,6 +95,17 @@ function getPayment(username) {
     },
     onSuccess: function(data) {
       $("payment").update(data.responseText);
+    }
+  });
+}
+
+function getQR(info) {
+  new Ajax.Request('https://api.qrserver.com/v1/create-qr-code', {
+    parameters: {
+      'data': info
+    },
+    onSuccess: function(resp) {
+      $("barcode").update(resp.responseText);
     }
   });
 }

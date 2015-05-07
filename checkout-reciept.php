@@ -15,15 +15,15 @@ if(count($_SESSION['cart']) > 0) {
   if(count($userid) > 0) {
     for($i = 0; $i < count($_SESSION['cart']); $i++) {
       $insertTX = "insert into transactions (userID, statusReturn, card_id, inventoryID, dueDate) values (" . $userid[0]['userid'] . ",'N'," . $_POST['payment'] . "," . $_SESSION['cart'][$i] . ", date_add(now(), INTERVAL 7 day));";
-      echo var_dump($insertTX);
         $txids .= mysql_insert_id();
         if($i != count($query) - 1) {
           $txids .= ", ";
         } 
-      executeQuery($insertTX);
+      $result = executeQuery($insertTX);
       $txids .= mysql_insert_id();
     }
   }
+  unset($_SESSION['cart']);
 }
 ?>
 <!DOCTYPE html>
@@ -82,7 +82,7 @@ if(count($_SESSION['cart']) > 0) {
   </div>
          <?php functionFooter(); ?>
   <script>
-    getQr("txids:'<?php echo $txids; ?>'")
+    /* getQR("txids:'<?php echo $txids; ?>'") */
   </script>
 </body>
 </html>
