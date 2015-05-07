@@ -279,10 +279,10 @@ body {
     color: #000000; 
 } 
   
-a:link { color: #ffffff; }
-        a:hover { color: #3b5998; }
-        a:active { color: #dfe3ee; }
-        a:visited { color: #dfe3ee; }
+a:link { color: #000000; }
+        a:hover { color: ##515151; }
+        a:active { color: #515151; }
+        a:visited { color: #515151; }
         
 button[type=submit] {
 	        width:150px;
