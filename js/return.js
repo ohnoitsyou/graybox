@@ -16,10 +16,6 @@ function extendRental(transactionID, inventoryID){
 }
 }
 
-/*
-the response from the server, after the request is processed completely is
-displayed as the value of the div-element with the id 'result'
-*/
 //note: ajax MUST be in the parameter list of this function always
 function extender(ajax){
 	var r =ajax.responseText;
