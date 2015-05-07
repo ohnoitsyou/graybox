@@ -17,7 +17,6 @@ body {
 }
 .header .navbar {
   clear: both;
-  border: 1px solid black;
   padding: 5px;
 }
 .header .navbar .quick_links {
@@ -73,7 +72,6 @@ body {
   margin-top: 10px;
   margin-bottom: 100px;
   background-color: #f7f7f7;
-  border: 1px solid black;
 }
 .content .title {
   border-bottom: 1px solid black;
