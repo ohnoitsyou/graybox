@@ -20,24 +20,13 @@ if(count($_SESSION['cart']) > 0) {
   <script src=" http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js" type="text/javascript"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js" type="text/javascript"></script>
   <script src="js/script.js" type="text/javascript"></script>
- <script type="text/javascript">
-    function filterZips() {
-      return false;
-      alert('filtering');
-      var zipcode = document.getElementById('zipcode');
-    }
-    function zipResp(data) {
-      console.log('RT:',this.responseText); 
-      console.log('data:',data); 
-    }
-  </script>
 </head>
 <body>
   <div class="header">
     <div class="navbar">
       <span class="logo">Graybox powered by RentalVideo&copy;</span>
       <div class="quick_links">
-        <span><a href="login.html">Home</a></span><span><a href="new_releases.php">New Releases</a></span><span><a href="displayall.php">Available titles to rent</a></span>
+        <span><a href="login.php">Home</a></span><span><a href="new_releases.php">New Releases</a></span><span><a href="displayall.php">Available titles to rent</a></span>
       </div>
     </div>
     <div class="statusbar">
@@ -58,19 +47,16 @@ if(count($_SESSION['cart']) > 0) {
       <?php } ?>
       </div>
       <?php for ($i = 0; $i < count($query); $i++) { ?>
-        <div class="move_title"><<?php echo $query[$i]['iName'];?></div>
+        <div class="move_title"><?php echo $query[$i]['iName'];?></div>
       <?php } ?>
       <hr />
       <div class="checkout_form">
-        <form action="checkout2.html"> 
+        <form method="post" action="checkout-reciept.php"> 
           <h3>Pickup Location</h3>
           <select id="locations" name="pickup">
           </select>
           <h3>Payment Method</h3>
-          <select name="payment">
-            <option value="dummy">Chose a method</option>
-            <option value="stored">Saved ...</option>
-            <option value="new">Enter a new card</option>
+          <select id="payment" name="payment">
           </select>
           <br />
           <br />
@@ -90,6 +76,7 @@ if(count($_SESSION['cart']) > 0) {
   <script>
     (function() {
       getLocations();
+      getPayment('<?php echo $username; ?>');
      })();
   </script>
 </body>
