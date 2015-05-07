@@ -42,7 +42,7 @@ if(count($_SESSION['cart']) > 0) {
     <div class="navbar">
       <span class="logo">Graybox powered by RentalVideo&copy;</span>
       <div class="quick_links">
-        <span><a href="login.php">Home</a></span><span><a href="new_releases.php">New Releases</a></span><span><a href="displayall.php">Available titles to rent</a></span>
+        <span><a href="login.php">Home</a></span><span><a href="new_releases.php">New Releases</a></span><span><a href="displayall.php">Available titles to rent</a></span><span><a href="preferences.php">Preferences</a></span>
       </div>
     </div>
     <div class="statusbar">
