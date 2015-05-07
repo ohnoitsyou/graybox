@@ -15,7 +15,7 @@ loggedInCheck();
 	<?php
 		$username = $_SESSION['username'];
 		$cartItems = $_SESSION['cartItems'];
-		$returnedMovie = $_POST['return'];
+		$txID = $_POST['txid'];
 		
 		#login to database
 		dbLogin();
@@ -24,7 +24,8 @@ loggedInCheck();
 		#construct write: update statusReturn 
 		$write = "UPDATE transactions, users SET transactions.statusReturn='Y' WHERE
 		'$username' = users.username and
-		users.userID = transactions.userID;";
+		users.userID = transactions.userID and
+		'$txID' = transactions.transactionID;";
 		
 		#write to db
 		$write_result = executeQuery($write);
