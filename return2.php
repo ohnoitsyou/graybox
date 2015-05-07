@@ -24,13 +24,11 @@ loggedInCheck();
 		
 		#construct write: update statusReturn 
 		$write = "UPDATE transactions, users SET transactions.statusReturn=1 WHERE
-		'$username' = users.username and
+		users.username = '$username'  and
 		users.userID = transactions.userID and
 		'$txID' = transactions.transactionID;";
-		
 		#write to db
 		$write_result = executeQuery($write);
-	
 		#if result object is not returned, then print an error and exit the PHP program
 		if(! $write_result){
 			print("Error - query could not be executed");
@@ -47,9 +45,6 @@ loggedInCheck();
       </div>
     </div>
     <div class="statusbar">
-      <div class="locationbox">
-        <span>Locations</span>
-      </div>
       <div class="statusboxes">
         <?php displayUserbox(); ?>
         <?php displayCartbox(); ?>
@@ -70,5 +65,6 @@ loggedInCheck();
   <div class="footer">
     <span>&copy; 2015 Team Zero Two Point Oh</span>
   </div>
+  <?php functionFooter() ?>
 </body>
 </html>
