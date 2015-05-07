@@ -9,7 +9,7 @@ dbLogin();
 dbSelect();
 
 
-$dueDate = executeQuery("update transactions set dueDate = date_add(dueDate,interval 7 day));");
+$dueDate = executeQuery("update transactions set dueDate = date_add(dueDate,interval 5 day));");
 
 #if result object is not returned, then print an error and exit the PHP program
 if(! $write_result){
