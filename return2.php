@@ -22,7 +22,7 @@ loggedInCheck();
 		dbSelect();
 		
 		#construct write: update statusReturn 
-		$write = "UPDATE transactions SET statusReturn='Y' WHERE
+		$write = "UPDATE transactions, users SET transactions.statusReturn='Y' WHERE
 		'$username' = users.username and
 		users.userID = transactions.userID and
 		transactions.statusReturn = 'N';";
