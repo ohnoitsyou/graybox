@@ -61,13 +61,13 @@ loggedInCheck();
 			print "<table>";
 			for ($i=0; $i<count($resultsArray); $i++) {
 			  print "<form method=\"post\" action=\"return2.php\">"; /*return form*/
-		      print "<div class=\"return_form\">";
-			  print "<div class=\"movie_cover\"><tr><td><img id=\"img1\" src=\"img/" . $resultsArray[$i]["inventoryID"] . ".jpg\" class=\"center\" onHover=\"coverHover()\" /></td></tr></div>";/*close movie_cover div*/
-			  print "<tr><td>Due postmarked by: \" . $resultsArray[i]["dueDate"] . \" </td></tr>";
-			  print "<tr><td><input type=\"submit\" value=\"Return \"" . $resultsArray[$i]["iName"] . "\"\" /></td></tr>";
-			  print "<input type=\"hidden\" name=\"txid\" value=\"" . $resultsArray[$i]["transactionID"] . "\" />";
-              print "<tr><td><input type=\"button\" value=\"Extend Rental\" onclick=\"extendRental(\"$transactionID\",\"$inventoryID\")\" /></td></tr>";
-              print "</form></div>";/*close return_form div */
+        print "  <div class=\"return_form\">";
+			  print "    <div class=\"movie_cover\"><tr><td><img id=\"img1\" src=\"img/" . $resultsArray[$i]["inventoryID"] . ".jpg\" class=\"center\" onHover=\"coverHover()\" /></td></tr></div>";/*close movie_cover div*/
+			  print "      <tr><td>Due postmarked by: " . $resultsArray[$i]["dueDate"] . " </td></tr>";
+			  print "      <tr><td><input type=\"submit\" value=\"Return '" . $resultsArray[$i]["iName"] . "'\" /></td></tr>";
+			  print "      <input type=\"hidden\" name=\"txid\" value=\"" . $resultsArray[$i]["transactionID"] . "\" />";
+        print "      <tr><td><input type=\"button\" value=\"Extend Rental of '" . $resultsArray[$i]["iName"]  . "\" onclick=\"extendRental(\"$transactionID\",\"$inventoryID\")\" /></td></tr>";
+        print "</div></form>";/*close return_form div */
 			  print "<tr></tr>";
 			}
 			print "</table>";
