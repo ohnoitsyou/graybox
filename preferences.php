@@ -20,6 +20,8 @@ loggedInCheck();
   <script src=" http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js" type="text/javascript"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js" type="text/javascript"></script>
   <script src="js/script.js" type="text/javascript"></script>
+
+    <!--
     <script type="text/javascript"> //Insert values into MySQL database with AJAX
       function sendajax() {
               alert('running');
@@ -76,6 +78,7 @@ loggedInCheck();
                 return false;
             };
     </script>
+    -->
 
 </head>
 <body>
@@ -96,7 +99,7 @@ loggedInCheck();
   <div class="content">
     <div class="title"><h1>Which movies would you like to be featured ?<h1></div>
     <div class="preferences_page">
-    <form action="" method="post"> <!-- ADD FOR ACTION TO "display_preferences.php"??? to display stored preferences? -->
+    <form action="display_preferences.php" method="post"> <!-- ADD FOR ACTION TO "display_preferences.php"??? to display stored preferences? -->
 		<table>
 			<tr>
 				<th>&nbsp;</th>
