@@ -1,4 +1,5 @@
 <?php 
+/* David Young */
 $dbhostname = 'studentdb.gl.umbc.edu';
 $dbusername = 'dayoung1';
 $dbpassword = 'dayoung1';
