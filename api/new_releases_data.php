@@ -1,4 +1,5 @@
 <?php
+/* Jon Ko */
 require_once ('common.php');
 dbLogin();
 dbSelect();

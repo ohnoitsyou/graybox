@@ -1,4 +1,5 @@
 <?php
+/* Christian Nieva */
 session_start();
 include('api/common.php');
 
