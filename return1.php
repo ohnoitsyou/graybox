@@ -23,7 +23,7 @@ loggedInCheck();
 		dbSelect();
 		
 		#construct query
-		$query ="SELECT transactions.transactionID, transactions.inventoryID, transactions.dueDate, inventory.iName, inventory.inventoryID FROM inventory, users, transactions WHERE
+		$query ="SELECT transactions.transactionID, transactions.inventoryID, transactions.dueDate, inventory.iName FROM inventory, users, transactions WHERE
 		\"$username\" = users.username and
 		users.userID = transactions.userID and
 		transactions.statusReturn ='N' and
@@ -66,7 +66,7 @@ loggedInCheck();
 			  print "      <tr><td>Due postmarked by: " . $resultsArray[$i]["dueDate"] . " </td></tr>";
 			  print "      <tr><td><input type=\"submit\" value=\"Return '" . $resultsArray[$i]["iName"] . "'\" /></td></tr>";
 			  print "      <input type=\"hidden\" name=\"txid\" value=\"" . $resultsArray[$i]["transactionID"] . "\" />";
-        		  print "      <input type=\"hidden\" name=\"inventoryID\" value=\"" . $resultsArray[$i]["inventoryID"] . "\" />";
+        		  print "      <input type=\"hidden\" name=\"iName\" value=\"" . $resultsArray[$i]["iName"] . "\" />";
         print "      <tr><td><input type=\"button\" value=\"Extend Rental of '" . $resultsArray[$i]["iName"]  . "'\" onclick=\"extendRental(\"$transactionID\",\"$inventoryID\")\" /></td></tr>";
         print "</div></form>";/*close return_form div */
 			  print "<tr></tr>";
