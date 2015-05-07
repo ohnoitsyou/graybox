@@ -87,6 +87,16 @@ function getLocations() {
     }
   });
 }
+function getPayment(username) {
+  new Ajax.Request('api/getPaymentInfo.php', {
+    parameters: {
+      'username': username
+    },
+    onSuccess: function(data) {
+      $("payment").update(data.responseText);
+    }
+  });
+}
 
 //grabs data to show images- remember need to "onLoad" (on loading page)
 
