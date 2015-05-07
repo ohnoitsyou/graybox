@@ -23,7 +23,7 @@ loggedInCheck();
 		dbSelect();
 		
 		#construct write: update statusReturn 
-		$write = "UPDATE transactions, users SET transactions.statusReturn='Y' WHERE
+		$write = "UPDATE transactions, users SET transactions.statusReturn=1 WHERE
 		'$username' = users.username and
 		users.userID = transactions.userID and
 		'$txID' = transactions.transactionID;";
@@ -43,7 +43,7 @@ loggedInCheck();
     <div class="navbar">
       <span class="logo">Graybox powered by RentalVideo&copy;</span>
       <div class="quick_links">
-        <span>Home</span><span>New Releases</span><span>Movies</span><span>TV Shows</span>
+        <span><a href="login.php">Home</a></span><span><a href="new_releases.php">New Releases</a></span><span><a href="displayall.php">Available titles to rent</a></span>
       </div>
     </div>
     <div class="statusbar">
@@ -51,13 +51,8 @@ loggedInCheck();
         <span>Locations</span>
       </div>
       <div class="statusboxes">
-        <div class="userbox">
-          <span class="username">Welcome <?php $username?></span>
-        </div>
-        <div class="cartbox">
-          <img src="img/shopping_cart.png" height="16px" width="16px"/> My Cart&nbsp;
-          <span class="items_in_cart"><?php $cartItems ?></span>
-        </div>
+        <?php displayUserbox(); ?>
+        <?php displayCartbox(); ?>
       </div>
     </div>
   </div>
