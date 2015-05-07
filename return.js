@@ -5,11 +5,11 @@ user-given abbreviation
 */
 function extendRental(transactionID, inventoryID){
 	//create a new Ajax request with URL pointing to extend.php
-	new Ajax.Request( "extend.php", 
-	{ 
+	new Ajax.Request( "extend.php",
+	{
 		parameters: {txID:transactionID,invID:inventoryID},
 		onSuccess: extender
-	} 
+	}
 	);
 }
 

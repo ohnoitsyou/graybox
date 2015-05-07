@@ -6,7 +6,7 @@ loggedInCheck();
 dbLogin();
 dbSelect();
 
-$sql = executeQuery("SELECT DISTINCT * FROM inventory where releaseDate < NOW();");
+$sql = executeQuery("SELECT DISTINCT * FROM preferences;");
 ?>
 
 <!--
@@ -14,13 +14,13 @@ $sql = executeQuery("SELECT DISTINCT * FROM inventory where releaseDate < NOW();
 	5/6/15
 	IS448
 	Dr. Sampath
-	Display all products
+	Display Preferences
 -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"> 
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <script src=" http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js" type="text/javascript"></script>
@@ -65,37 +65,29 @@ $sql = executeQuery("SELECT DISTINCT * FROM inventory where releaseDate < NOW();
     </div>
   </div>
   <div class="content">
-    <div class="title"><h1>New Releases<h1></div>
-    <div class="new_releases_page">
-      <table id='display' border="1" style="width:100%"> 
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Release Dare</th>
-            <th>Price</th>
-            <th>Action</th>
-        </tr>
-    <?php 
+        <h1>Thank you for your preferences!</h1>
+        <h3>Please review your submitted information.</h3>
+      <table id='display_preferences' border="1" style="width:100%">
+        <?php
       foreach($sql as $row) {
-    ?>
-       <tr>
-           <td><?php echo $row["iName"]; ?></td>
-           <td><?php echo $row["iDescription"]; ?></td>
-           <td><?php echo $row["releaseDate"]; ?></td>
-           <td><?php echo $row["price"]; ?></td>
-           <td><?php echo addToCartButton($row["inventoryID"]) ?></td>
-      </tr>
-     <?php   
-        } 
-     ?> 
+        ?>
+          <tr><?php echo $row["pref1"]; ?></tr>
+          <tr><?php echo $row["pref2"]; ?></tr>
+          <tr><?php echo $row["pref3"]; ?></tr>
+          <tr><?php echo $row["pref4"]; ?></tr>
+          <tr><?php echo $row["pref5"]; ?></tr>
+          <tr><?php echo $row["pref6"]; ?></tr>
+          <tr><?php echo $row["pref7"]; ?></tr>
+          <tr><?php echo $row["pref8"]; ?></tr>
+          <tr><?php echo $row["pref9"]; ?></tr>
+          <tr><?php echo $row["pref10"]; ?></tr>
+     <?php
+        }
+     ?>
      </table>
     <p>
-      <a href="checkout1.html">Ready to checkout?</a>
+      <a href="displayall.php">Browse available titles!</a>
     </p>
-    <p>
-      <a href="return.html">Ready to return your movie?</a>
-    </p>
-  </div>
   <div class="footer">
     <span>&copy; 2015 Team Zero Two Point Oh</span>
   </div>

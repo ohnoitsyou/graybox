@@ -96,7 +96,7 @@ loggedInCheck();
   <div class="content">
     <div class="title"><h1>Which movies would you like to be featured ?<h1></div>
     <div class="preferences_page">
-    <form action="" method="post"> <!-- **TAKE OFF FORM ACTION???? OR ADD??? ALREADY CALLING "setuserpreferences.php" within AJAX script tags -->
+    <form action="" method="post"> <!-- ADD FOR ACTION TO "display_preferences.php"??? to display stored preferences? -->
 		<table>
 			<tr>
 				<th>&nbsp;</th>
@@ -113,7 +113,7 @@ loggedInCheck();
 			<tr>
 				<td class="row">Children &amp; Family</td>
 				<td><input type="radio" name="children" value="n" /></td>
-				<td><input type="radio" name="children"value="s" /><td>
+                <td><input type="radio" name="children"value="s" /></td>
 				<td><input type="radio" name="children" value="o"/></td>
 			</tr>
 			<tr>
