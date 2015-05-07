@@ -24,8 +24,7 @@ loggedInCheck();
 		#construct write: update statusReturn 
 		$write = "UPDATE transactions, users SET transactions.statusReturn='Y' WHERE
 		'$username' = users.username and
-		users.userID = transactions.userID and
-		transactions.statusReturn = 'N';";
+		users.userID = transactions.userID;";
 		
 		#write to db
 		$write_result = executeQuery($write);
