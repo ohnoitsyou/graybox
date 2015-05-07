@@ -26,3 +26,13 @@ function extender(ajax){
 	console.log(r);
 	$("dueDate").innerHTML = r;
 }
+
+function paraHover() {
+	document.getElementById("para1").style.color = "red";
+}
+
+function coverHover(imgID) {
+	document.getElementById(imgID).style.border = "red";
+	
+}
+}
