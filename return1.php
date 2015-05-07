@@ -17,7 +17,6 @@ loggedInCheck();
 <body>
 	<?php
 		$username = $_SESSION['username'];
-		$cartItems = $_SESSION['cartItems'];
 		
 		#login to database
 		dbLogin();
@@ -30,13 +29,12 @@ loggedInCheck();
 		transactions.statusReturn ='N' and
 		transactions.inventoryID = inventory.inventoryID;";
 		
-		$resultsArray=executeQuery($query);
-
+		$resultsArray = executeQuery($query);
 		if(count($resultsArray) > 0){
-			$MoviesOut = true;
+			$moviesOut = true;
 		}
 		else{			
-			$MoviesOut = false;
+			$moviesOut = false;
 		}
 	?>
   <div class="header">
@@ -47,17 +45,9 @@ loggedInCheck();
       </div>
     </div>
     <div class="statusbar">
-      <div class="locationbox">
-        <span>Locations</span>
-      </div>
       <div class="statusboxes">
-        <div class="userbox">
-          <span class="username">Welcome <?php $username ?></span>
-        </div>
-        <div class="cartbox">
-          <img src="img/shopping_cart.png" height="16px" width="16px"/> My Cart&nbsp;
-          <span class="items_in_cart"><?php $cartItems ?></span>
-        </div>
+        <?php displayUserbox(); ?>
+        <?php displayCartbox(); ?>
       </div>
     </div>
   </div>
@@ -73,7 +63,7 @@ loggedInCheck();
 			  print "<form method=\"post\" action=\"return2.php\">"; /*return form*/
 		      print "<div class=\"return_form\">";
 			  print "<div class=\"movie_cover\"><tr><td><img id=\"img1\" src=\"img/" . $resultsArray[$i]["inventoryID"] . ".jpg\" class=\"center\" onHover=\"coverHover()\" /></td></tr></div>";/*close movie_cover div*/
-			  print "<tr><td><input type=\"submit\" name=\" value=\"" . $iName . "\" />Return this movie</td></tr>";
+			  print "<tr><td><input type=\"submit\" value=\"Return \"" . $resultsArray[$i]["iName"] . "\"\" /></td></tr>";
 			  print "<input type=\"hidden\" name=\"txid\" value=\"" . $resultsArray[$i]["transactionID"] . "\" />";
               print "<tr><td><input type=\"button\" value=\"Extend Rental\" onclick=\"extendRental(\"$transactionID\",\"$inventoryID\")\" /></td></tr>";
               print "</form></div>";/*close return_form div */
