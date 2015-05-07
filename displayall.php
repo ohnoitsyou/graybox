@@ -33,19 +33,17 @@ $sql = executeQuery("SELECT DISTINCT * FROM inventory where releaseDate < NOW();
             table, th, td {
             border-collapse: collapse;
             }
-            th, td {
+            th {
             padding: 5px;
             text-align: left;
-            }
-            table#t01 tr:nth-child(even) {
-            background-color: #eee;
-            }
-            table#t01 tr:nth-child(odd) {
-            background-color:#fff;
-            }
-            table#t01 th	{
-            background-color: black;
             color: white;
+            background-color: black
+            }
+            tr:nth-child(even) {
+            background-color: #f68c06;
+            }
+            tr:nth-child(odd) {
+            background-color:#f7f7f7;
             }
     </style>
 </head>
@@ -75,6 +73,7 @@ $sql = executeQuery("SELECT DISTINCT * FROM inventory where releaseDate < NOW();
             <th>Price</th>
             <th>Action</th>
         </tr>
+
     <?php 
       foreach($sql as $row) {
     ?>
