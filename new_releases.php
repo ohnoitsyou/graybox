@@ -56,7 +56,7 @@ $results = executeQuery($movie_query);
 	</br>
     <p>
 	  Upcoming Movie!
-	  <div id="upcoming"></div>
+	  <div id="upcoming"> </div>
     </p>
     <p><a href="return1.php">Ready to return your movie?</a></p>
   </div>

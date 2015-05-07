@@ -89,9 +89,6 @@ $sql = executeQuery("SELECT DISTINCT * FROM inventory where releaseDate < NOW();
      ?> 
      </table>
     <p>
-      <a href="checkout1.html">Ready to checkout?</a>
-    </p>
-    <p>
       <a href="return.html">Ready to return your movie?</a>
     </p>
   </div>
