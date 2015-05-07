@@ -17,7 +17,6 @@ $results = executeQuery($movie_query);
   <script src=" http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js" type="text/javascript"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js" type="text/javascript"></script>
 </head>
-
 <body>
   <div class="header">
     <div class="navbar">
@@ -57,15 +56,10 @@ $results = executeQuery($movie_query);
 	</br>
     <p>
 	  Upcoming Movie!
-	  <div id="upcoming">  </div>
-      <a href="checkout1.html">Ready to checkout?</a>
+	  <div id="upcoming"></div>
     </p>
-    <p>
-      <a href="return.html">Ready to return your movie?</a>
-    </p>
+    <p><a href="return1.php">Ready to return your movie?</a></p>
   </div>
-  
-  
   <div class="footer">
     <span>&copy; 2015 Team Zero Two Point Oh</span>
   </div>
