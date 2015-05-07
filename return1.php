@@ -41,7 +41,7 @@ loggedInCheck();
     <div class="navbar">
       <span class="logo">Graybox powered by RentalVideo&copy;</span>
       <div class="quick_links">
-        <span>Home</span><span>New Releases</span><span>Movies</span><span>TV Shows</span>
+        <span><a href="login.php">Home</a></span><span><a href="new_releases.php">New Releases</a></span><span><a href="displayall.php">Available titles to rent</a></span>
       </div>
     </div>
     <div class="statusbar">
