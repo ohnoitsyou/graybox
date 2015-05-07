@@ -65,8 +65,8 @@ loggedInCheck();
 	<h3>Please print this page to include with your movie.</h3>
 	<div class="return_page">
 	  <table id="t01">
-	    <tr><td>Customer ID:</td><td><?php $username ?></td></tr>
-		<tr><td>Movie ID:</td><td><?php $returnedMovie ?></td></tr>
+	    <tr><td>Customer ID:</td><td><?php echo $username ?></td></tr>
+		<tr><td>Movie ID:</td><td><?php echo $returnedMovie ?></td></tr>
 	  </table>
 	  <a href="return1.php"><h4>Have another movie to return?</a></h4>
     </div>
