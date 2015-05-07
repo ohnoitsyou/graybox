@@ -41,6 +41,23 @@ if($results[0]['username'] == $username) {
 	<link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
 <body>
-<?php print($string); ?>
+  <div class="header">
+    <div class="navbar">
+      <span class="logo">Graybox powered by RentalVideo&trade;</span>
+      <div class="quick_links">
+           <span><a href="login.php">Home</a></span>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+      <?php print($string); ?>
+      <br>
+      <br>
+      <a href="http://userpages.umbc.edu/~dayoung1/is448/graybox/"><img src="http://theterramarproject.org/images/parcels/try-again.png" alt="Go back home"></a>
+  </div>
+  <div class="footer">
+    <span>&copy; 2015 Team Zero Two Point Oh</span>
+  </div>
 </body>
 </html>
+
