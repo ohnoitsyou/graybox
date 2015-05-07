@@ -16,6 +16,7 @@ loggedInCheck();
 		$username = $_SESSION['username'];
 		$cartItems = $_SESSION['cartItems'];
 		$txID = $_POST['txid'];
+		$iName = $_POST['iName'];
 		
 		#login to database
 		dbLogin();
@@ -36,7 +37,7 @@ loggedInCheck();
 			$error = mysql_error();
 			print "<p> . $error . </p>";
 			exit;
-		}			
+		}
 	?>
   <div class="header">
     <div class="navbar">
@@ -65,8 +66,8 @@ loggedInCheck();
 	<h3>Please print this page to include with your movie.</h3>
 	<div class="return_page">
 	  <table id="t01">
-	    <tr><td>Customer ID:</td><td><?php echo $username ?></td></tr>
-		<tr><td>Movie ID:</td><td><?php echo $returnedMovie ?></td></tr>
+	    <tr><td>Customer ID:</td><td><?php echo $username; ?></td></tr>
+		<tr><td>Movie:</td><td><?php echo $iName; ?></td></tr>
 	  </table>
 	  <a href="return1.php"><h4>Have another movie to return?</a></h4>
     </div>
